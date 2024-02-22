@@ -77,7 +77,7 @@ function Portfolio() {
         flexDir={{ base: "column", md: "row" }}
         flexWrap="wrap"
         justifyContent="center"
-        alignContent='center'
+        alignItems='center'
       >
         {projects.map((project, index) => (
           <Cards key={index} projects={project} />
