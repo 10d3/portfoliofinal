@@ -81,7 +81,7 @@ export default function Navbar() {
     { name: "Home", href: homeRef },
     { name: "Portfolio", href: portfolioRef },
     { name: "About", href: aboutRef },
-    { name: "Blog", href: blogRef },
+    // { name: "Blog", href: blogRef },
   ];
 
   const { isOpen, onOpen, onClose } = useDisclosure();

@@ -10,7 +10,7 @@ export default function Body() {
       <Home />
       <Portfolio />
       <About />
-      <Blog />
+      {/* <Blog /> */}
     </Flex>
   );
 }
