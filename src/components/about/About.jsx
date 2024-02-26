@@ -21,6 +21,7 @@ function About() {
     },
   ];
 
+
   return (
     <Flex
       ref={aboutRef}
@@ -28,13 +29,13 @@ function About() {
       w={"100%"}
       pos={"relative"}
       h={"fit-content"}
-      minH="100vh"
+      // minH="100vh"
       alignItems={"center"}
       justifyContent={"center"}
       // mx={{ base: "15px", md: "50px" }}
       // pl={{ base: "auto", md: "30px" }}
       flexDir='column'
-      my={{base:"35rem",md:"14rem"}}
+      // my={{base:"35rem",md:"14rem"}}
     >
       <Box
         display="flex"
@@ -53,11 +54,12 @@ function About() {
         </Box>
         <Box
           w={{ base: "100%", md: "50%" }}
+          h={{ base: "fit-content", md: "100%" }}
           display="flex"
           alignItems={"center"}
           justifyContent={"center"}
         >
-          <Text>education</Text>
+          <Text>My Skill</Text>
         </Box>
       </Box>
       <Box w="100%" display="flex" flexDir={{ base: "column", md: "row" }} gap={'4'}>

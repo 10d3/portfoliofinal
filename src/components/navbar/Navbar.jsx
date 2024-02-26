@@ -11,7 +11,7 @@ import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import "./navbar.css";
 import { useContext, useEffect, useState } from "react";
 import RefContext from "../../context/RefContext";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 function useMobileView() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -38,7 +38,7 @@ export default function Navbar() {
     initial: {
       scaleY: 0,
       transition: {
-        staggerChildren: 0.09,
+        staggerChildren: 0.9,
       },
     },
     animate: {
@@ -98,7 +98,7 @@ export default function Navbar() {
       as="nav"
       h={{ base: isOpen ? "100%" : "fit-content", md: "fit-content" }}
       w={{ base: isOpen ? "100%" : "100%", md: "100%" }}
-      pos={{ base: isOpen ? "absolute" : "sticky", md: "sticky" }}
+      pos={{ base: isOpen ? "absolute" : "absolute", md: "sticky" }}
       justifyContent="space-between"
       alignItems="center"
       top="0%"

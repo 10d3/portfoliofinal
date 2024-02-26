@@ -55,7 +55,7 @@ function Blog() {
     <Flex
       w={"100%"}
       h={"100%"}
-      minH={"100vh"}
+      // minH={"100vh"}
       alignItems={"center"}
       justifyContent={"center"}
       // mx={{ base: "15px", md: "50px" }}

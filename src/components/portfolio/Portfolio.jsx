@@ -1,5 +1,5 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
-import { forwardRef, useContext, useEffect } from "react";
+import { Box, Button, Flex, HStack, Text } from "@chakra-ui/react";
+import { forwardRef, useContext, useEffect, useState } from "react";
 import RefContext from "../../context/RefContext";
 import Cards from "../card/Card";
 import { motion, useInView, useAnimation } from "framer-motion";
@@ -17,6 +17,7 @@ function Portfolio() {
       gitHref: "",
       iconGit: "fa-brands fa-github",
       iconLive: "fa-solid fa-arrow-up-right-from-square",
+      typePro: ["design", "all"]
     },
     {
       title: "project 2",
@@ -27,6 +28,7 @@ function Portfolio() {
       gitHref: "",
       iconGit: "fa-brands fa-github",
       iconLive: "fa-solid fa-arrow-up-right-from-square",
+      typePro: ["front", "all"]
     },
     {
       title: "project 3",
@@ -37,6 +39,7 @@ function Portfolio() {
       gitHref: "",
       iconGit: "fa-brands fa-github",
       iconLive: "fa-solid fa-arrow-up-right-from-square",
+      typePro: ["back", "all"]
     },
     {
       title: "project 4",
@@ -47,38 +50,46 @@ function Portfolio() {
       gitHref: "",
       iconGit: "fa-brands fa-github",
       iconLive: "fa-solid fa-arrow-up-right-from-square",
+      typePro: ["cyber", "all"]
     },
   ];
 
-  const pent = "node";
+  const seaBut = ["design", "front", "back", "cyber", "all"];
+  const [pent, setPent] = useState("all");
 
   console.table(
     projects
-      .filter((project) => project.technologies.includes(pent))
+      .filter((project) => project.typePro.includes(pent))
       .sort((a, b) => (b.title - a.title ? 1 : -1))
   );
-  console.table(
-    projects.filter((project) => project.technologies.includes(pent))
-  );
 
-  const isInView = useInView(portfolioRef, { once: true});
+  const filt = projects
+    .filter((project) => project.typePro.includes(pent))
+    // .sort((a, b) => (b.title - a.title ? 1 : -1 ));
+
+  console.log(filt);
+  // console.table(
+  //   projects.filter((project) => project.technologies.includes(pent))
+  // );
+
+  const isInView = useInView(portfolioRef, { once: true });
   const mainControls = useAnimation();
 
   useEffect(() => {
     if (isInView) {
       mainControls.start("visible");
-      console.log(isInView)
+      console.log(isInView);
     }
-  }, [isInView])
+  }, [isInView]);
 
   return (
     <Flex
       //   ref={portfolioRef}
       //   id="portfolio"
-      my={{ base: "35rem", md: "14rem" }}
+      // my={{ base: "35rem", md: "14rem" }}
       pos={"relative"}
       w={"100%"}
-      minH={"100vh"}
+      // minH={"100vh"}
       h={"fit-content"}
       alignItems={"center"}
       justifyContent={"center"}
@@ -92,12 +103,12 @@ function Portfolio() {
         id="portfolio"
         as={motion.div}
         variants={{
-          hidden: { opacity: 0, x: -200},
-          visible: { opacity: 1, x: 0},
+          hidden: { opacity: 0, x: -200 },
+          visible: { opacity: 1, x: 0 },
         }}
         initial="hidden"
         animate={mainControls}
-        transition='0.8s linear'
+        transition="0.8s linear"
       >
         <Text fontSize="4xl" alignSelf="left">
           Portfolio
@@ -118,9 +129,25 @@ function Portfolio() {
         }}
         initial="hidden"
         animate={mainControls}
-        transition='0.8s linear'
+        transition="0.8s linear"
       >
-        {projects.map((project, index) => (
+        <HStack width={{ base: "100%", md: "93%" }} overflow="hidden">
+          {seaBut.map((item, index) => (
+            <Button
+              width="24.5%"
+              key={index}
+              fontSize="0.8rem"
+              fontWeight="bold"
+              color="blue.500"
+              onClick={() => {
+                setPent(item);
+              }}
+            >
+              {item}
+            </Button>
+          ))}
+        </HStack>
+        {filt.map((project, index) => (
           <Cards key={index} projects={project} />
         ))}
       </Box>
