@@ -11,9 +11,71 @@ import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import "./navbar.css";
 import { useContext, useEffect, useState } from "react";
 import RefContext from "../../context/RefContext";
+import { AnimatePresence, motion } from "framer-motion";
+
+function useMobileView() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  return isMobile;
+}
 
 export default function Navbar() {
   const { homeRef, aboutRef, portfolioRef, blogRef } = useContext(RefContext);
+  const isMobile = useMobileView();
+
+  const menuVars = {
+    initial: {
+      scaleY: 0,
+      transition: {
+        staggerChildren: 0.09,
+      },
+    },
+    animate: {
+      scaleY: 1,
+      transition: {
+        duration: 0.5,
+        ease: [0.22, 1, 0.36, 1],
+        type: "spring",
+        stiffness: 120,
+        staggerChildren: 0.5,
+      },
+    },
+    exit: {
+      scaleY: 0,
+      transition: {
+        duration: 0.5,
+        ease: [0.12, 0, 0.39, 0],
+        type: "spring",
+        // stiffness: 120,
+      },
+    },
+  };
+
+  const linkVars = {
+    initial: {
+      y: "60vh",
+    },
+    open: {
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: [0.22, 1, 0.36, 1],
+        type: "spring",
+        // stiffness: 120,
+      },
+    },
+  };
 
   const links = [
     { name: "Home", href: homeRef },
@@ -71,6 +133,12 @@ export default function Navbar() {
         zIndex={{ base: "4", md: "0" }}
         pos="relative"
         alignSelf="center"
+        as={motion.div}
+        variants={isMobile ? menuVars : {}}
+        initial={isMobile ? "initial" : ""}
+        animate={isMobile ? (isOpen ? "animate" : "exit") : ""}
+        style={{ originY: 0 }}
+        overflow={{ base: "hidden", md: "visible" }}
       >
         {links.map((link, index) => (
           <Text
@@ -87,6 +155,10 @@ export default function Navbar() {
             fontWeight="bold"
             cursor={"pointer"}
             onClick={isOpen ? onClose : onOpen}
+            as={motion.div}
+            variants={isMobile ? linkVars : {}}
+            initial={isMobile ? "initial" : ""}
+            animate={isMobile ? (isOpen ? "open" : "") : ""}
           >
             <a
               onClick={() =>
