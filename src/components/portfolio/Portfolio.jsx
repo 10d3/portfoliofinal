@@ -17,7 +17,7 @@ function Portfolio() {
       gitHref: "",
       iconGit: "fa-brands fa-github",
       iconLive: "fa-solid fa-arrow-up-right-from-square",
-      typePro: ["design", "all"]
+      typePro: ["Design", "all"]
     },
     {
       title: "project 2",
@@ -28,7 +28,7 @@ function Portfolio() {
       gitHref: "",
       iconGit: "fa-brands fa-github",
       iconLive: "fa-solid fa-arrow-up-right-from-square",
-      typePro: ["front", "all"]
+      typePro: ["Front", "all"]
     },
     {
       title: "project 3",
@@ -39,7 +39,7 @@ function Portfolio() {
       gitHref: "",
       iconGit: "fa-brands fa-github",
       iconLive: "fa-solid fa-arrow-up-right-from-square",
-      typePro: ["back", "all"]
+      typePro: ["Back", "all"]
     },
     {
       title: "project 4",
@@ -50,11 +50,11 @@ function Portfolio() {
       gitHref: "",
       iconGit: "fa-brands fa-github",
       iconLive: "fa-solid fa-arrow-up-right-from-square",
-      typePro: ["cyber", "all"]
+      typePro: ["Cyber", "all"]
     },
   ];
 
-  const seaBut = ["design", "front", "back", "cyber", "all"];
+  const seaBut = ["Design", "Front", "Back", "Cyber", "all"];
   const [pent, setPent] = useState("all");
 
   console.table(

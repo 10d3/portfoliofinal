@@ -34,6 +34,23 @@ export default function Navbar() {
   const { homeRef, aboutRef, portfolioRef, blogRef } = useContext(RefContext);
   const isMobile = useMobileView();
 
+  const boxMenuVars = {
+    initial: {
+      x: -50,
+      opacity: 0,
+    },
+    animate: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 1.5,
+        delay: 0.5,
+        type: "spring",
+        stiffness: 120,
+      },
+    },
+  };
+
   const menuVars = {
     initial: {
       scaleY: 0,
@@ -117,7 +134,15 @@ export default function Navbar() {
         alignItems={"center"}
         w="100%"
       >
-        <Text className="brand-text">Herley</Text>
+        <Text
+          className="brand-text"
+          as={motion.p}
+          variants={boxMenuVars}
+          initial="initial"
+          animate="animate"
+        >
+          Herley
+        </Text>
         <Box display={{ base: "block", md: "none" }}>
           <IconButton
             aria-label="Toggle Menu"

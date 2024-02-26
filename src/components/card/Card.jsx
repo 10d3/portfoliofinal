@@ -10,6 +10,7 @@ import {
   CardFooter,
   ButtonGroup,
   Button,
+  HStack,
 } from "@chakra-ui/react";
 
 export default function Cards({ projects }) {
@@ -22,7 +23,10 @@ export default function Cards({ projects }) {
           borderRadius="lg"
         />
         <Stack mt="6" spacing="3">
+          <HStack justifyContent='space-between'>
           <Heading size="md">{projects.title}</Heading>
+          <Button>{projects.typePro[0]}</Button>
+          </HStack>
           <Text>{projects.description}</Text>
           <ButtonGroup spacing="2">
             {projects.technologies.map((tech, index) => {
