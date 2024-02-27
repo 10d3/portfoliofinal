@@ -141,7 +141,15 @@ export default function Navbar() {
           initial="initial"
           animate="animate"
         >
-          Herley
+          <a
+            onClick={() =>
+              links[0].href.current.scrollIntoView({ behavior: "smooth" })
+            }
+            target={links[0].href}
+            className="link"
+          >
+            Herley
+          </a>
         </Text>
         <Box display={{ base: "block", md: "none" }}>
           <IconButton
@@ -164,20 +172,25 @@ export default function Navbar() {
         animate={isMobile ? (isOpen ? "animate" : "exit") : ""}
         style={{ originY: 0 }}
         overflow={{ base: "hidden", md: "visible" }}
+        gap={4}
+        justifyContent={"center"}
+        alignItems={"center"}
       >
         {links.map((link, index) => (
           <Text
             key={index}
             // target={link.href}
-            px="10px"
+            px={{base:'0',md:"10px"}}
             color="purple.400"
             w="100%"
-            h="25%"
+            // h="25%"
+            h={'fit-content'}
             display="flex"
             alignItems="center"
             justifyContent="center"
-            fontSize="2xl"
-            fontWeight="bold"
+            fontSize="md"
+            // fontWeight="bold"
+            fontFamily={"Roboto"}
             cursor={"pointer"}
             onClick={isOpen ? onClose : onOpen}
             as={motion.div}
@@ -207,7 +220,7 @@ export default function Navbar() {
         alignItems={"center"}
         justifyContent={"center"}
       >
-        <Text>2024@Herley</Text>
+        <Text>© 2024 10d3</Text>
       </Box>
     </Flex>
   );

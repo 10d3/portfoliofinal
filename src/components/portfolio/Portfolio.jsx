@@ -17,7 +17,7 @@ function Portfolio() {
       gitHref: "",
       iconGit: "fa-brands fa-github",
       iconLive: "fa-solid fa-arrow-up-right-from-square",
-      typePro: ["Design", "all"]
+      typePro: ["Design", "all"],
     },
     {
       title: "project 2",
@@ -28,7 +28,7 @@ function Portfolio() {
       gitHref: "",
       iconGit: "fa-brands fa-github",
       iconLive: "fa-solid fa-arrow-up-right-from-square",
-      typePro: ["Front", "all"]
+      typePro: ["Front", "all"],
     },
     {
       title: "project 3",
@@ -39,7 +39,7 @@ function Portfolio() {
       gitHref: "",
       iconGit: "fa-brands fa-github",
       iconLive: "fa-solid fa-arrow-up-right-from-square",
-      typePro: ["Back", "all"]
+      typePro: ["Back", "all"],
     },
     {
       title: "project 4",
@@ -50,27 +50,15 @@ function Portfolio() {
       gitHref: "",
       iconGit: "fa-brands fa-github",
       iconLive: "fa-solid fa-arrow-up-right-from-square",
-      typePro: ["Cyber", "all"]
+      typePro: ["Cyber", "all"],
     },
   ];
 
   const seaBut = ["Design", "Front", "Back", "Cyber", "all"];
   const [pent, setPent] = useState("all");
 
-  console.table(
-    projects
-      .filter((project) => project.typePro.includes(pent))
-      .sort((a, b) => (b.title - a.title ? 1 : -1))
-  );
-
-  const filt = projects
-    .filter((project) => project.typePro.includes(pent))
-    // .sort((a, b) => (b.title - a.title ? 1 : -1 ));
-
-  console.log(filt);
-  // console.table(
-  //   projects.filter((project) => project.technologies.includes(pent))
-  // );
+  const filt = projects.filter((project) => project.typePro.includes(pent));
+  // .sort((a, b) => (b.title - a.title ? 1 : -1 ));
 
   const isInView = useInView(portfolioRef, { once: true });
   const mainControls = useAnimation();
@@ -81,6 +69,19 @@ function Portfolio() {
       console.log(isInView);
     }
   }, [isInView]);
+
+  const filtButtonVars = {
+    hidden:{
+      opacity: 0,
+      scaleY: 0,
+      // transition: { delay: custom * 0.1 },
+    },
+    animate: (index) => ({
+      opacity: 1,
+      scaleY: 1,
+      transition: { delay: index * 0.5 },
+    }),
+  };
 
   return (
     <Flex
@@ -109,6 +110,7 @@ function Portfolio() {
         initial="hidden"
         animate={mainControls}
         transition="0.8s linear"
+        pt={14}
       >
         <Text fontSize="4xl" alignSelf="left">
           Portfolio
@@ -134,6 +136,12 @@ function Portfolio() {
         <HStack width={{ base: "100%", md: "93%" }} overflow="hidden">
           {seaBut.map((item, index) => (
             <Button
+              as={motion.div}
+              custom={index}
+              variants={filtButtonVars}
+              initial="hidden"
+              whileInView="animate"
+              viewport={{once: true}}
               width="24.5%"
               key={index}
               fontSize="0.8rem"

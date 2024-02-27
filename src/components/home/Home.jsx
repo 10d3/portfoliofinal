@@ -13,9 +13,9 @@ function Home() {
   useEffect(() => {
     if (isInView) {
       mainControls.start("visible");
-      console.log(isInView)
+      console.log(isInView);
     }
-  }, [isInView])
+  }, [isInView]);
 
   const socials = [
     { name: "fa-brands fa-github", lien: "https://github.com/10d3" },
@@ -51,12 +51,12 @@ function Home() {
         justifyContent={"center"}
       >
         <Box display={"flex"} flexDir={"column"}>
-          <Text fontSize={"4xl"} fontWeight={"bold"}>
-            Hey I Am{" "}
-          </Text>
-          <Text fontSize={"4xl"} fontWeight={"bold"}>
-            Herley Antoine
-          </Text>
+          <Box lineHeight={1}>
+            <Text fontSize={"2xl"}>Hey I Am </Text>
+            <Text fontSize={"4xl"} fontWeight={"bold"}>
+              Herley Antoine
+            </Text>
+          </Box>
           <Text fontSize={"14px"} fontWeight={"100"} mt={"10px"}>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas nulla
             vitae, voluptate natus odit accusantium nemo adipisci? Porro est hic
