@@ -18,5 +18,6 @@ export const theme = extendTheme({
   fonts: {
     heading: "Roboto Slab",
     body: `'Raleway', sans-serif`,
+    Text: "DM Sans",
   },
 });

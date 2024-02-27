@@ -3,31 +3,32 @@ import { forwardRef, useContext } from "react";
 import RefContext from "../../context/RefContext";
 // import Milestones from "../timeline/Timeline";
 import { motion } from "framer-motion";
-import {info, skills} from '../data/Data'
+import { info, skills } from "../data/Data";
+import {skillsVariants} from '../animations/Animations'
 
 function About() {
   const { aboutRef } = useContext(RefContext);
 
-  const skillsVariants = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-    },
-    animate: (custom) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: custom * 0.1,
-        type: "spring",
-        stiffness: 120,
-      },
-    }),
-  };
+  // const skillsVariants = {
+  //   hidden: {
+  //     opacity: 0,
+  //     y: 50,
+  //   },
+  //   animate: (custom) => ({
+  //     opacity: 1,
+  //     y: 0,
+  //     transition: {
+  //       delay: custom * 0.1,
+  //       type: "spring",
+  //       stiffness: 120,
+  //     },
+  //   }),
+  // };
 
   return (
     <Flex
-      ref={aboutRef}
-      id="about"
+      // ref={aboutRef}
+      // id="about"
       w={"100%"}
       pos={"relative"}
       h={"fit-content"}
@@ -36,7 +37,9 @@ function About() {
       justifyContent={"center"}
       flexDir="column"
     >
-      <Text fontSize="4xl" alignSelf="left">About Me</Text>
+      <Text fontSize="4xl" alignSelf="left" mt={14} ref={aboutRef} id="about">
+        About Me
+      </Text>
       <Box
         display="flex"
         h={{ base: "80%", md: "80%" }}
@@ -60,13 +63,13 @@ function About() {
           justifyContent={"center"}
           flexDir={"column"}
         >
-          <Text alignSelf='left'>Use for Work and Fun</Text>
+          <Text alignSelf="left">Use for Work and Fun</Text>
           <Box
             display="flex"
             flexDir="row"
             flexWrap="wrap"
             alignItems="center"
-            h={{base:'100%',md:"40%"}}
+            h={{ base: "100%", md: "40%" }}
             justifyContent="space-between"
           >
             {skills.map((skill, index) => (

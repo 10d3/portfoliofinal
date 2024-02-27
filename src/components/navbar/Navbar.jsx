@@ -12,6 +12,7 @@ import "./navbar.css";
 import { useContext, useEffect, useState } from "react";
 import RefContext from "../../context/RefContext";
 import { motion } from "framer-motion";
+import {boxMenuVars, menuVars, linkVars} from '../animations/Animations'
 
 function useMobileView() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -24,6 +25,7 @@ function useMobileView() {
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("orientationchange", handleResize);
     };
   }, []);
 
@@ -33,66 +35,6 @@ function useMobileView() {
 export default function Navbar() {
   const { homeRef, aboutRef, portfolioRef, blogRef } = useContext(RefContext);
   const isMobile = useMobileView();
-
-  const boxMenuVars = {
-    initial: {
-      x: -50,
-      opacity: 0,
-    },
-    animate: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        duration: 1.5,
-        delay: 0.5,
-        type: "spring",
-        stiffness: 120,
-      },
-    },
-  };
-
-  const menuVars = {
-    initial: {
-      scaleY: 0,
-      transition: {
-        staggerChildren: 0.9,
-      },
-    },
-    animate: {
-      scaleY: 1,
-      transition: {
-        duration: 0.5,
-        ease: [0.22, 1, 0.36, 1],
-        type: "spring",
-        stiffness: 120,
-        staggerChildren: 0.5,
-      },
-    },
-    exit: {
-      scaleY: 0,
-      transition: {
-        duration: 0.5,
-        ease: [0.12, 0, 0.39, 0],
-        type: "spring",
-        // stiffness: 120,
-      },
-    },
-  };
-
-  const linkVars = {
-    initial: {
-      y: "60vh",
-    },
-    open: {
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: [0.22, 1, 0.36, 1],
-        type: "spring",
-        // stiffness: 120,
-      },
-    },
-  };
 
   const links = [
     { name: "Home", href: homeRef },
@@ -140,6 +82,10 @@ export default function Navbar() {
           variants={boxMenuVars}
           initial="initial"
           animate="animate"
+          fontFamily={"Open Sans"}
+          fontWeight={"bold"}
+          fontSize={"xl"}
+          cursor={"pointer"}
         >
           <a
             onClick={() =>
@@ -148,7 +94,7 @@ export default function Navbar() {
             target={links[0].href}
             className="link"
           >
-            Herley
+            / 10D3
           </a>
         </Text>
         <Box display={{ base: "block", md: "none" }}>

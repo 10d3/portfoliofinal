@@ -1,3 +1,6 @@
+
+
+
 // start home section
 export const infoHome = {
     title: "Hey I Am",

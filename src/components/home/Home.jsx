@@ -3,10 +3,11 @@ import imageP from "../../../public/images/imageP.png";
 import { forwardRef, useContext, useEffect } from "react";
 import RefContext from "../../context/RefContext";
 import { motion, useAnimation, useInView } from "framer-motion";
-import { textVariants } from "../animations/Animations";
-import {socials, infoHome} from '../data/Data'
+import { textVariants, iconVars } from "../animations/Animations";
+import { socials, infoHome } from "../data/Data";
 
 function Home() {
+
   const { homeRef } = useContext(RefContext);
 
   const isInView = useInView(homeRef, { once: true });
@@ -28,7 +29,7 @@ function Home() {
       alignItems={"center"}
       justifyContent={"center"}
       flexDir={{ base: "column-reverse", md: "row" }}
-      marginTop={"2"}
+      // marginTop={"2"}
       marginBottom={{ base: "35", md: "2" }}
     >
       <Box
@@ -89,6 +90,12 @@ function Home() {
               key={index}
               fontSize={"3xl"}
               cursor={"pointer"}
+              as={motion.p}
+              custom={index}
+              variants={iconVars}
+              initial="hidden"
+              whileInView="animate"
+              viewport={{ once: true }}
             >
               <a href={social.lien}>
                 <i className={social.name}></i>
@@ -106,6 +113,7 @@ function Home() {
       >
         <Img
           src={imageP}
+          borderRadius='30'
           alt="imageP"
           w={{ base: "60%", md: "auto" }}
           h={"fit-content"}
