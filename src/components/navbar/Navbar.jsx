@@ -134,7 +134,7 @@ export default function Navbar() {
             display="flex"
             alignItems="center"
             justifyContent="center"
-            fontSize="md"
+            fontSize={{base:"2xl",md:"md"}}
             // fontWeight="bold"
             fontFamily={"Roboto"}
             cursor={"pointer"}
