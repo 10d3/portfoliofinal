@@ -3,6 +3,8 @@ import imageP from "../../../public/images/imageP.png";
 import { forwardRef, useContext, useEffect } from "react";
 import RefContext from "../../context/RefContext";
 import { motion, useAnimation, useInView } from "framer-motion";
+import { textVariants } from "../animations/Animations";
+import {socials, infoHome} from '../data/Data'
 
 function Home() {
   const { homeRef } = useContext(RefContext);
@@ -17,15 +19,6 @@ function Home() {
     }
   }, [isInView]);
 
-  const socials = [
-    { name: "fa-brands fa-github", lien: "https://github.com/10d3" },
-    {
-      name: "fa-brands fa-linkedin",
-      lien: "https://www.linkedin.com/in/aherleym/",
-    },
-    // { name: "fa-brands fa-twitter", lien: "" },
-    // { name: "fa-brands fa-instagram", lien: "" },
-  ];
   return (
     <Flex
       ref={homeRef}
@@ -34,8 +27,6 @@ function Home() {
       minH={"100vh"}
       alignItems={"center"}
       justifyContent={"center"}
-      // mx={{ base: "15px", md: "50px" }}
-      // pl={{ base: "auto", md: "30px" }}
       flexDir={{ base: "column-reverse", md: "row" }}
       marginTop={"2"}
       marginBottom={{ base: "35", md: "2" }}
@@ -52,16 +43,22 @@ function Home() {
       >
         <Box display={"flex"} flexDir={"column"}>
           <Box lineHeight={1}>
-            <Text fontSize={"2xl"}>Hey I Am </Text>
+            <Text
+              fontSize={"2xl"}
+              as={motion.p}
+              variants={textVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              {infoHome.title}
+            </Text>
             <Text fontSize={"4xl"} fontWeight={"bold"}>
-              Herley Antoine
+              {infoHome.name}
             </Text>
           </Box>
           <Text fontSize={"14px"} fontWeight={"100"} mt={"10px"}>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas nulla
-            vitae, voluptate natus odit accusantium nemo adipisci? Porro est hic
-            nulla, neque illo quibusdam dolor libero quidem dolorem, consectetur
-            fuga.
+            {infoHome.description}
           </Text>
         </Box>
         <Button
@@ -103,7 +100,6 @@ function Home() {
       <Box
         w={{ base: "100%", md: "50%" }}
         h={{ base: "40%", md: "100%" }}
-        // h={"auto"}
         display={"flex"}
         alignItems={"center"}
         justifyContent={"center"}

@@ -3,58 +3,11 @@ import { forwardRef, useContext, useEffect, useState } from "react";
 import RefContext from "../../context/RefContext";
 import Cards from "../card/Card";
 import { motion, useInView, useAnimation } from "framer-motion";
+import {projects, seaBut} from '../data/Data'
 
 function Portfolio() {
   const { portfolioRef } = useContext(RefContext);
 
-  const projects = [
-    {
-      title: "project 1",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      technologies: ["react", "node", "express", "mongo"],
-      image: "",
-      liveHref: "",
-      gitHref: "",
-      iconGit: "fa-brands fa-github",
-      iconLive: "fa-solid fa-arrow-up-right-from-square",
-      typePro: ["Design", "all"],
-    },
-    {
-      title: "project 2",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      technologies: ["react", "node", "express", "mongo"],
-      image: "",
-      liveHref: "",
-      gitHref: "",
-      iconGit: "fa-brands fa-github",
-      iconLive: "fa-solid fa-arrow-up-right-from-square",
-      typePro: ["Front", "all"],
-    },
-    {
-      title: "project 3",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      technologies: ["react", "node", "express", "mongo"],
-      image: "",
-      liveHref: "",
-      gitHref: "",
-      iconGit: "fa-brands fa-github",
-      iconLive: "fa-solid fa-arrow-up-right-from-square",
-      typePro: ["Back", "all"],
-    },
-    {
-      title: "project 4",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      technologies: ["react", "node", "express", "mongo"],
-      image: "",
-      liveHref: "",
-      gitHref: "",
-      iconGit: "fa-brands fa-github",
-      iconLive: "fa-solid fa-arrow-up-right-from-square",
-      typePro: ["Cyber", "all"],
-    },
-  ];
-
-  const seaBut = ["Design", "Front", "Back", "Cyber", "all"];
   const [pent, setPent] = useState("all");
 
   const filt = projects.filter((project) => project.typePro.includes(pent));
@@ -79,23 +32,17 @@ function Portfolio() {
     animate: (index) => ({
       opacity: 1,
       scaleY: 1,
-      transition: { delay: index * 0.5 },
+      transition: { delay: index * 0.2 },
     }),
   };
 
   return (
     <Flex
-      //   ref={portfolioRef}
-      //   id="portfolio"
-      // my={{ base: "35rem", md: "14rem" }}
       pos={"relative"}
       w={"100%"}
-      // minH={"100vh"}
       h={"fit-content"}
       alignItems={"center"}
       justifyContent={"center"}
-      // mx={{ base: "15px", md: "50px" }}
-      // pl={{ base: "auto", md: "30px" }}
       flexDir={"column"}
       gap={"4"}
     >

@@ -3,57 +3,26 @@ import { forwardRef, useContext } from "react";
 import RefContext from "../../context/RefContext";
 // import Milestones from "../timeline/Timeline";
 import { motion } from "framer-motion";
+import {info, skills} from '../data/Data'
 
 function About() {
   const { aboutRef } = useContext(RefContext);
-
-  const info = [
-    {
-      title: "UI/UX Design",
-      description: "At in proin consequat ut cursus venenatis sapien.",
-    },
-    {
-      title: "Front Developer",
-      description: "At in proin consequat ut cursus venenatis sapien.",
-    },
-    {
-      title: "Cyber Security",
-      description: "At in proin consequat ut cursus venenatis sapien.",
-    },
-  ];
 
   const skillsVariants = {
     hidden: {
       opacity: 0,
       y: 50,
     },
-    animate: (index) => ({
+    animate: (custom) => ({
       opacity: 1,
       y: 0,
       transition: {
-        delay: index * 0.1,
+        delay: custom * 0.1,
+        type: "spring",
+        stiffness: 120,
       },
     }),
   };
-
-  const skills = [
-    "HTML",
-    "CSS",
-    "JS",
-    "React",
-    "Node",
-    "Express",
-    "MongoDB",
-    "Figma",
-    "Redux",
-    "Chakra UI",
-    "Bootstrap",
-    "Tailwind",
-    "Next.js",
-    "Git",
-    "Github",
-    "Gitlab",
-  ];
 
   return (
     <Flex
@@ -65,11 +34,9 @@ function About() {
       minH="100vh"
       alignItems={"center"}
       justifyContent={"center"}
-      // mx={{ base: "15px", md: "50px" }}
-      // pl={{ base: "auto", md: "30px" }}
       flexDir="column"
-      // my={{base:"35rem",md:"14rem"}}
     >
+      <Text fontSize="4xl" alignSelf="left">About Me</Text>
       <Box
         display="flex"
         h={{ base: "80%", md: "80%" }}
@@ -77,7 +44,7 @@ function About() {
         flexDir={{ base: "column", md: "row" }}
       >
         <Box
-          w={{ base: "100%", md: "50%" }}
+          w={{ base: "100%", md: "65%" }}
           h={{ base: "50%", md: "100%" }}
           display="flex"
           alignItems={"center"}
@@ -86,14 +53,14 @@ function About() {
           <Text>education</Text>
         </Box>
         <Box
-          w={{ base: "100%", md: "50%" }}
+          w={{ base: "100%", md: "35%" }}
           h={{ base: "100%", md: "100%" }}
           display="flex"
           alignItems={"center"}
           justifyContent={"center"}
           flexDir={"column"}
         >
-          <Text>My Skill</Text>
+          <Text alignSelf='left'>Use for Work and Fun</Text>
           <Box
             display="flex"
             flexDir="row"
@@ -128,11 +95,11 @@ function About() {
         {info.map((item, index) => (
           <Card
             as={motion.div}
-            custom={index}
+            custom={index * 1.5}
             variants={skillsVariants}
             initial="hidden"
             whileInView="animate"
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             key={index}
             h="auto"
           >
