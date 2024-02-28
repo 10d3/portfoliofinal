@@ -9,22 +9,6 @@ import {skillsVariants} from '../animations/Animations'
 function About() {
   const { aboutRef } = useContext(RefContext);
 
-  // const skillsVariants = {
-  //   hidden: {
-  //     opacity: 0,
-  //     y: 50,
-  //   },
-  //   animate: (custom) => ({
-  //     opacity: 1,
-  //     y: 0,
-  //     transition: {
-  //       delay: custom * 0.1,
-  //       type: "spring",
-  //       stiffness: 120,
-  //     },
-  //   }),
-  // };
-
   return (
     <Flex
       // ref={aboutRef}

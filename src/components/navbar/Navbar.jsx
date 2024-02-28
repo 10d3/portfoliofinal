@@ -13,6 +13,7 @@ import { useContext, useEffect, useState } from "react";
 import RefContext from "../../context/RefContext";
 import { motion } from "framer-motion";
 import {boxMenuVars, menuVars, linkVars} from '../animations/Animations'
+import { Link } from "react-router-dom";
 
 function useMobileView() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -33,7 +34,7 @@ function useMobileView() {
 }
 
 export default function Navbar() {
-  const { homeRef, aboutRef, portfolioRef, blogRef } = useContext(RefContext);
+  const { homeRef, aboutRef, portfolioRef } = useContext(RefContext);
   const isMobile = useMobileView();
 
   const links = [
@@ -94,7 +95,7 @@ export default function Navbar() {
             target={links[0].href}
             className="link"
           >
-            / 10D3
+            /10D3
           </a>
         </Text>
         <Box display={{ base: "block", md: "none" }}>
@@ -155,6 +156,7 @@ export default function Navbar() {
             </a>
           </Text>
         ))}
+        <Link className="link" to="/blog">Blog</Link>
         <Button onClick={toggleColorMode}>
           {isLightMode ? <MoonIcon /> : <SunIcon />}
         </Button>

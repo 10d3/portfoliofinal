@@ -18,15 +18,16 @@ export const iconVars = {
   export const skillsVariants = {
     hidden: {
       opacity: 0,
-      y: 50,
+      y: -50,
     },
     animate: (custom) => ({
       opacity: 1,
       y: 0,
       transition: {
         delay: custom * 0.1,
-        type: "spring",
-        stiffness: 120,
+        // duration: custom * 1,
+        // type: "spring",
+        // stiffness: 120,
       },
     }),
   };

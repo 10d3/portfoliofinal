@@ -24,6 +24,7 @@ export const seaBut = ["Design", "Front", "Back", "Cyber", "all"];
 
 export const projects = [
     {
+      id: 0,
       title: "project 1",
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       technologies: ["react", "node", "express", "mongo"],
@@ -35,6 +36,7 @@ export const projects = [
       typePro: ["Design", "all"],
     },
     {
+      id: 1,
       title: "project 2",
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       technologies: ["react", "node", "express", "mongo"],
@@ -46,6 +48,7 @@ export const projects = [
       typePro: ["Front", "all"],
     },
     {
+      id: 2,
       title: "project 3",
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       technologies: ["react", "node", "express", "mongo"],
@@ -57,6 +60,7 @@ export const projects = [
       typePro: ["Back", "all"],
     },
     {
+      id: 3,
       title: "project 4",
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       technologies: ["react", "node", "express", "mongo"],
