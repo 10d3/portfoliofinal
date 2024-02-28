@@ -18,7 +18,7 @@ import {
 } from "@chakra-ui/react";
 // import BlogCard from "./blogCard/BlogCard";
 import Cards from "../card/Card";
-import { projects } from "../data/Data";
+import { projects } from "../data/BlogData";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
@@ -35,26 +35,27 @@ function Blog() {
 
   return (
     <Flex
-      w={"100%"}
-      // h={"fit-content"}
-      // minH={"100vh"}
+      w={"100vw"}
+      minH={"100vh"}
       alignItems={"center"}
       // justifyContent={"center"}
       py={"2"}
       flexDir={"column"}
-      // gap={"4"}
     >
       <Box
         as="nav"
         pos={"fixed"}
         top="0"
         display="flex"
-        w={{ md: "70%", base: "90%" }}
+        w={{ md: "100%", base: "100%" }}
+        px={{ md: "15%", base: "5%" }}
         h="fit-content"
-        pt={2}
+        py={2}
         alignItems="center"
         justifyContent="space-between"
-        mb={4}
+        // mb={4}
+        zIndex={10}
+        bg={colorMode === "light" ? "gray.300" : "gray.700"}
       >
         <Link to="/">
           <Button>Home</Button>
@@ -66,16 +67,17 @@ function Blog() {
       <Box
         as="section"
         w={{ md: "70%", base: "90%" }}
-        gap={"4"}
+        gap={"8"}
         display="flex"
         flexDir='column'
         // justifyContent="center"
         alignItems="center"
-        // pos={"relative"}
-        // h="fit-content"
-        // top={"10%"}
+        mt="5rem"
       >
-        <Box>
+        <Box
+        pos='relative'
+        //  mt={{base:'16', md:'0'}}
+         >
           <Heading size="xl">Welcome to my Blog</Heading>
         </Box>
         <Box
@@ -90,51 +92,34 @@ function Blog() {
           // h='70%'
         >
           {projects.map((project) => (
-            <Card h={"fit-content"} key={project.id}>
+            <Card
+            key={project.id}
+            direction={{ base: 'column', sm: 'row' }}
+            overflow='hidden'
+            variant='outline'
+            w={{ base: '100%', sm: '400px' }}
+            h={{base: 'fit-content', sm: 'fit-content'}}
+          >
+            <Image
+              objectFit='cover'
+              maxW={{ base: '100%', sm: '200px' }}
+              src='https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60'
+              alt='Caffe Latte'
+            />
+            <Stack>
               <CardBody>
-                {/* <Image
-              src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-              alt="Green double couch with wooden legs"
-              borderRadius="lg"
-            /> */}
-                <Stack mt="6" spacing="3">
-                  <HStack justifyContent="space-between">
-                    <Heading size="md">{project.title}</Heading>
-                    <Button>{project.typePro[0]}</Button>
-                  </HStack>
-                  <Text>{project.description}</Text>
-                  <ButtonGroup spacing="2">
-                    {project.technologies.map((tech, index) => {
-                      return (
-                        <Button key={index} size="sm">
-                          {tech}
-                        </Button>
-                      );
-                    })}
-                  </ButtonGroup>
-                </Stack>
+                <Heading size='md'>{project.title}</Heading>
+                <Text py='2'>
+                  {project.description}
+                </Text>
               </CardBody>
-              <Divider />
               <CardFooter>
-                <ButtonGroup
-                  w="100%"
-                  display="flex"
-                  flexDir="row"
-                  justifyContent="space-between"
-                >
-                  <Button variant="solid" colorScheme="blue">
-                    <a href={project.gitHref}>
-                      <i className={project.iconGit}></i>
-                    </a>
-                  </Button>
-                  <Button variant="ghost" colorScheme="blue">
-                    <Link to={`/blog/${project.id}`}>
-                      <i className={project.iconLive}></i>
-                    </Link>
-                  </Button>
-                </ButtonGroup>
+                <Button variant='solid' colorScheme='blue'>
+                  <Link to={`/blog/${project.id}`}>Read More</Link>
+                </Button>
               </CardFooter>
-            </Card>
+            </Stack>
+          </Card>
           ))}
         </Box>
       </Box>
