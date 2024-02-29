@@ -137,7 +137,6 @@ export default function Navbar() {
             justifyContent="center"
             fontSize={{base:"2xl",md:"md"}}
             // fontWeight="bold"
-            fontFamily={"Roboto"}
             cursor={"pointer"}
             onClick={isOpen ? onClose : onOpen}
             as={motion.div}
