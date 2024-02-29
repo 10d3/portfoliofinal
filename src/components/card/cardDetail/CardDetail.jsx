@@ -3,6 +3,8 @@ import { projects } from "../../data/BlogData";
 import {
   Box,
   Button,
+  Divider,
+  Flex,
   Heading,
   Img,
   Text,
@@ -25,7 +27,7 @@ function CardDetail() {
     <>
       <Box
         as="nav"
-        pos={"fixed"}
+        pos={"sticky"}
         top="0"
         display="flex"
         w={{ md: "100%", base: "100%" }}
@@ -45,36 +47,44 @@ function CardDetail() {
           {isLightMode ? <MoonIcon /> : <SunIcon />}
         </Button>
       </Box>
-      <VStack
+      <Box
+        minH="100vh"
         //  px={{ md: "15%", base: "5%" }}
         w={{ md: "70%", base: "90%" }}
-        gap={"8"}
+        // gap={"8"}
         display="flex"
         flexDir="column"
         // justifyContent="center"
         alignItems="center"
-        mt="5rem"
+        // mt="5rem"
+        pos='relative'
       >
-        <Heading mt={{ base: "26rem", md: "0" }} alignSelf={"start"}>
+        <Heading
+        mt={{ base: "4rem", md: "4rem", }}
+        alignSelf={"start"}>
           {projects[params.id].title}
         </Heading>
-        {projects[params.id].img && <Img w='50%' h='fit-content' src={projects[params.id].img}/>}
-        <Box textAlign={"justify"}>
+        <br/>
+        <Divider />
+        <br/>
+        {projects[params.id].img && (
+          <Img w="100%" h="fit-content" src={projects[params.id].img} />
+        )}
+        <br />
+        <Box maxW='100%' w='fit-content' textAlign={"justify"}>
           <Text>{projects[params.id].p1}</Text>
           <br />
-          {projects[params.id].fh1 ? null : <h2>{projects[params.id].fH1}</h2>}
-          {projects[params.id].reas ? (
+          {projects[params.id].fh1 && <h2>{projects[params.id].fH1}</h2>}
+          {projects[params.id].reas && (
             <ul>
               {projects[params.id].reas.map((reason, index) => {
                 return <li key={index}>{reason}</li>;
               })}
             </ul>
-          ) : null}
+          )}
           <br />
           {projects[params.id].fh2 && <h2>{projects[params.id].fh2}</h2>}
-          {projects[params.id].des1 && (
-            <Text>{projects[params.id].des1}</Text>
-          )}
+          {projects[params.id].des1 && <Text>{projects[params.id].des1}</Text>}
           <br />
           {projects[params.id].fh3 && <h2>{projects[params.id].fh3}</h2>}
           {projects[params.id].reas1 && (
@@ -86,11 +96,17 @@ function CardDetail() {
           )}
           <br />
           {projects[params.id].fh4 && <h2>{projects[params.id].fh4}</h2>}
-          {projects[params.id].des2 && (
-            <Text>{projects[params.id].des2}</Text>
+          {projects[params.id].des2 && <Text>{projects[params.id].des2}</Text>}
+          {projects[params.id].code && <ul>{projects[params.id].code}</ul>}
+          {projects[params.id].des3 && <Text>{projects[params.id].des3}</Text>}
+          {projects[params.id].conclusion && (
+            <Text>{projects[params.id].conclusion}</Text>
           )}
+          <br />
+          {projects[params.id].coffee && <Text display='flex' alignSelf='center' w='fit-content' h='fit-content'>{projects[params.id].coffee}</Text> }
+          <br />
         </Box>
-      </VStack>
+      </Box>
     </>
   );
 }
