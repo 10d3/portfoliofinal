@@ -144,7 +144,7 @@ const ThemeContext = React.createContext({
   {
     id: 1,
     title: "Unveiling the Power of useParams",
-    img: "https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
+    img: "https://cdn.hashnode.com/res/hashnode/image/upload/v1665807463447/9kVSm1ZOG.png?w=1600&h=840&fit=crop&crop=entropy&auto=compress,format&format=webp",
     description: "A Guide to Managing URL Parameters.",
     p1: (
       <>
