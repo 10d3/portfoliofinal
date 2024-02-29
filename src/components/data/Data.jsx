@@ -5,7 +5,7 @@
 export const infoHome = {
     title: "Hey I Am",
     name: "Herley Antoine",
-    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas nulla vitae, voluptate natus odit accusantium nemo adipisci? Porro est hic nulla, neque illo quibusdam dolor libero quidem dolorem, consectetur fuga.",
+    description: "a passionate front-end developer from Haiti. My goal is to create impactful and functional digital experiences. Welcome to my portfolio, where you can explore my work and discover how I can help you achieve your online goals.",
   };
 
 export const socials = [
