@@ -156,7 +156,7 @@ export default function Navbar() {
             </a>
           </Text>
         ))}
-        <Link className="link" to="/blog">Blog</Link>
+        <Link className="link" to="/blog"><Text fontSize={{base:"2xl",md:"md"}} color='purple.400'>Blog</Text></Link>
         <Button onClick={toggleColorMode}>
           {isLightMode ? <MoonIcon /> : <SunIcon />}
         </Button>
