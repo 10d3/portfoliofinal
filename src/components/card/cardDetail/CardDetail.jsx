@@ -68,7 +68,7 @@ function CardDetail() {
         <Divider />
         <br/>
         {projects[params.id].img && (
-          <Img w="100%" h="fit-content" src={projects[params.id].img} />
+          <Img w={{base:"100%", md:'fit-content'}} h={{base:"fit-content", md:'35%'}}src={projects[params.id].img} />
         )}
         <br />
         <Box maxW='100%' w='fit-content' textAlign={"justify"}>

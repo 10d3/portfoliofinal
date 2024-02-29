@@ -4,7 +4,7 @@ export const projects = [
   {
     id: 0,
     title: "Props Drilling in React",
-    img: "https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
+    img: "https://www.copycat.dev/blog/wp-content/uploads/2023/03/react_usecontext.png",
     description: "Don't Let Your Components Drown in Data Debt.",
     p1: (
       <>
@@ -143,9 +143,9 @@ const ThemeContext = React.createContext({
   },
   {
     id: 1,
-    title: "Unveiling the Power of useParams in React",
+    title: "Unveiling the Power of useParams",
     img: "https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
-    description: "Don't Let Your Components Drown in Data Debt.",
+    description: "A Guide to Managing URL Parameters.",
     p1: (
       <>
         In the <strong>realm of React development</strong>, crafting dynamic and
