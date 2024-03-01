@@ -3,7 +3,7 @@ import { forwardRef, useContext } from "react";
 import RefContext from "../../context/RefContext";
 // import Milestones from "../timeline/Timeline";
 import { motion } from "framer-motion";
-import { info, skills } from "../data/Data";
+import { info, skills, aboutMe } from "../data/Data";
 import {skillsVariants} from '../animations/Animations'
 
 function About() {
@@ -37,7 +37,7 @@ function About() {
           alignItems={"center"}
           justifyContent={"center"}
         >
-          <Text>education</Text>
+          <Text>Flex</Text>
         </Box>
         <Box
           w={{ base: "100%", md: "35%" }}

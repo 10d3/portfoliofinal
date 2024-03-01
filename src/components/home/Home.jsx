@@ -42,7 +42,7 @@ function Home() {
         alignItems={"flex-start"}
         justifyContent={"center"}
       >
-        <Box display={"flex"} flexDir={"column"}>
+        <Box display={"flex"} w='100%' flexDir={"column"}>
           <Box lineHeight={1}>
             <Text
               fontSize={"2xl"}
@@ -58,7 +58,7 @@ function Home() {
               {infoHome.name}
             </Text>
           </Box>
-          <Text fontSize={"14px"} fontWeight={"100"} mt={"10px"}>
+          <Text fontSize={"1.2rem"} fontWeight={"100"} mt={"10px"} lineHeight={1.2}>
             {infoHome.description}
           </Text>
         </Box>
