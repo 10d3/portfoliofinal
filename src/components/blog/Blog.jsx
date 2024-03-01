@@ -58,7 +58,7 @@ function Blog() {
         bg={colorMode === "light" ? "gray.300" : "gray.700"}
       >
         <Link to="/">
-          <Button>Home</Button>
+          <Button className="space-mono-bold">Home</Button>
         </Link>
         <Button onClick={toggleColorMode}>
           {isLightMode ? <MoonIcon /> : <SunIcon />}
@@ -78,7 +78,7 @@ function Blog() {
         pos='relative'
         //  mt={{base:'16', md:'0'}}
          >
-          <Heading size="xl">Welcome to my Blog</Heading>
+          <Heading size="xl" className="ubuntu-regular">Welcome to my Blog</Heading>
         </Box>
         <Box
           as="section"
@@ -108,13 +108,13 @@ function Blog() {
             />
             <Stack>
               <CardBody>
-                <Heading size='md'>{project.title}</Heading>
-                <Text py='2'>
+                <Heading className="ubuntu-regular" size='md'>{project.title}</Heading>
+                <Text className="poppins-regular" py='2'>
                   {project.description}
                 </Text>
               </CardBody>
               <CardFooter>
-                <Button variant='solid' colorScheme='blue'>
+                <Button className="ubuntu-regular" variant='solid' colorScheme='blue'>
                   <Link to={`/blog/${project.id}`}>Read More</Link>
                 </Button>
               </CardFooter>

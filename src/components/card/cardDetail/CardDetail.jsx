@@ -41,7 +41,7 @@ function CardDetail() {
         bg={colorMode === "light" ? "gray.300" : "gray.700"}
       >
         <Link to="/blog">
-          <Button>Back</Button>
+          <Button className="space-mono-bold">Back</Button>
         </Link>
         <Button onClick={toggleColorMode}>
           {isLightMode ? <MoonIcon /> : <SunIcon />}
@@ -61,7 +61,9 @@ function CardDetail() {
       >
         <Heading
         mt={{ base: "4rem", md: "4rem", }}
-        alignSelf={"start"}>
+        alignSelf={"start"}
+        className="ubuntu-regular"
+        >
           {projects[params.id].title}
         </Heading>
         <br/>
@@ -71,7 +73,7 @@ function CardDetail() {
           <Img w={{base:"100%", md:'fit-content'}} h={{base:"fit-content", md:'35%'}}src={projects[params.id].img} />
         )}
         <br />
-        <Box maxW='100%' w='fit-content' textAlign={"justify"}>
+        <Box className="poppins-regular" maxW='100%' w='fit-content' textAlign={"justify"}>
           <Text>{projects[params.id].p1}</Text>
           <br />
           {projects[params.id].fh1 && <h2>{projects[params.id].fH1}</h2>}
