@@ -106,8 +106,8 @@ export const skills = [
 ];
 export const aboutMe = (
   <>
-    Hello, I'm Herley, a 21-year-old with a profound passion for computer
-    science and technology. From a young age, I've been deeply curious about all
+    Hello, I&apos;m Herley, a 21-year-old with a profound passion for computer
+    science and technology. From a young age, I&apos;ve been deeply curious about all
     things related to computing. Growing up in a country where accessing a
     computer and electricity posed significant challenges, I was fortunate to
     have older cousins who shared my curiosity and had access to computer
@@ -115,14 +115,14 @@ export const aboutMe = (
     <br /> Navigating this profession in a country like Haiti has been a
     significant challenge. Despite the obstacles, access to the internet has
     been pivotal in my education. It has enabled me to study and acquire skills
-    in software development, website creation, and phone repair. Currently, I'm
+    in software development, website creation, and phone repair. Currently, I&apos;m
     focused on expanding my expertise in cybersecurity.<br/>
-    <br /> Throughout my journey, I've had the opportunity to work as a
+    <br /> Throughout my journey, I&apos;ve had the opportunity to work as a
     freelancer with individuals from various parts of the world. In this
-    portfolio, you'll find a showcase of the diverse projects and websites I've
+    portfolio, you&apos;ll find a showcase of the diverse projects and websites I&apos;ve
     developed.<br/>
     <br /> I am dedicated to my professional and personal growth and am open to
-    new opportunities and challenges. Please don't hesitate to reach out to me
+    new opportunities and challenges. Please don&apos;t hesitate to reach out to me
     for any inquiries or potential collaborations.
   </>
 );

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import RefContext from "../../context/RefContext";
-import { Box, Button, Heading, Text } from "@chakra-ui/react";
+import { Box, Heading, Text } from "@chakra-ui/react";
 
 function Contact() {
   const { contactRef } = useContext(RefContext);

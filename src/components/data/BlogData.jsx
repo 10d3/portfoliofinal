@@ -8,13 +8,13 @@ export const projects = [
     description: "Don't Let Your Components Drown in Data Debt.",
     p1: (
       <>
-        <strong>Imagine this</strong>: you're building a React app, everything's
+        <strong>Imagine this</strong>: you&apos;re building a React app, everythings&apos;
         going smoothly, components are reusable, code is clean. Then, the
         dreaded data sharing issue pops up. You need user information, say the
         theme preference, to trickle down from the mighty App component to a
         tiny button component buried deep within the UI. Boom! You start passing
         data down, prop by prop, like a bucket brigade battling a data-fueled
-        fire. This, my friends, is <strong>prop drilling</strong>, and it's a
+        fire. This, my friends, is <strong>prop drilling</strong>, and it&apos;s a
         recipe for <strong>component hell</strong>.
       </>
     ),
@@ -228,8 +228,8 @@ const ThemeContext = React.createContext({
     des2: (
       <>
         To harness the power of the useParams hook, ensure you have the
-        react-router-dom library installed within your project. Once that's in
-        place, here's a meticulously crafted guide to its implementation:
+        react-router-dom library installed within your project. Once that&apos;s in
+        place, here&apos;s a meticulously crafted guide to its implementation:
         <br />
       </>
     ),
@@ -295,7 +295,7 @@ function ProductDetails() {
             <li>
               <strong>Dynamic Data Fetching</strong>: Employ the parameter value
               to make API calls, meticulously retrieving specific information
-              tailored to the user's input.
+              tailored to the user&apos;s input.
             </li>
             <li>
               <strong>Personalized Content Rendering</strong>: Dynamically
@@ -317,15 +317,16 @@ function ProductDetails() {
       <>
         <br />
         <strong>Conclusion: Empowering Dynamic React Applications</strong>:
-        <br /> The <Code>{`useParams`}</Code> hook bestows upon you the ability to construct
-        dynamic and engaging React applications by providing a robust mechanism
-        for managing URL parameters. By comprehending its functionality and
-        strategically incorporating it into your development workflow, you
-        unlock a plethora of possibilities for crafting user-centric and
-        interactive experiences. Remember, this serves as a foundational
-        understanding. As you embark on your development journey, delve deeper
-        into the intricacies of <Code>{`useParams`}</Code> and uncover its true potential in
-        building robust and dynamic React applications.
+        <br /> The <Code>{`useParams`}</Code> hook bestows upon you the ability
+        to construct dynamic and engaging React applications by providing a
+        robust mechanism for managing URL parameters. By comprehending its
+        functionality and strategically incorporating it into your development
+        workflow, you unlock a plethora of possibilities for crafting
+        user-centric and interactive experiences. Remember, this serves as a
+        foundational understanding. As you embark on your development journey,
+        delve deeper into the intricacies of <Code>{`useParams`}</Code> and
+        uncover its true potential in building robust and dynamic React
+        applications.
       </>
     ),
     coffee: (
@@ -333,6 +334,11 @@ function ProductDetails() {
         <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=10d3&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" />
       </a>
     ),
+    keyWords: [
+      "useParams hook react",
+      "react dynamic routes",
+      "react get url parameters",
+    ],
   },
   {
     id: 2,
@@ -341,13 +347,13 @@ function ProductDetails() {
     description: "Don't Let Your Components Drown in Data Debt.",
     p1: (
       <>
-        <strong>Imagine this</strong>: you're building a React app, everything's
+        <strong>Imagine this</strong>: you&apos;re building a React app, everything&apos;s
         going smoothly, components are reusable, code is clean. Then, the
         dreaded data sharing issue pops up. You need user information, say the
         theme preference, to trickle down from the mighty App component to a
         tiny button component buried deep within the UI. Boom! You start passing
         data down, prop by prop, like a bucket brigade battling a data-fueled
-        fire. This, my friends, is <strong>prop drilling</strong>, and it's a
+        fire. This, my friends, is <strong>prop drilling</strong>, and it&apos;s a
         recipe for <strong>component hell</strong>.
       </>
     ),
@@ -477,13 +483,13 @@ const ThemeContext = React.createContext({
     description: "Don't Let Your Components Drown in Data Debt.",
     p1: (
       <>
-        <strong>Imagine this</strong>: you're building a React app, everything's
+        <strong>Imagine this</strong>: you&apos;re building a React app, everything&apos;s
         going smoothly, components are reusable, code is clean. Then, the
         dreaded data sharing issue pops up. You need user information, say the
         theme preference, to trickle down from the mighty App component to a
         tiny button component buried deep within the UI. Boom! You start passing
         data down, prop by prop, like a bucket brigade battling a data-fueled
-        fire. This, my friends, is <strong>prop drilling</strong>, and it's a
+        fire. This, my friends, is <strong>prop drilling</strong>, and it&apos;s a
         recipe for <strong>component hell</strong>.
       </>
     ),

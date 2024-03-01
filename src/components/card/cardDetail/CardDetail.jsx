@@ -4,15 +4,14 @@ import {
   Box,
   Button,
   Divider,
-  Flex,
   Heading,
   Img,
   Text,
-  VStack,
   useColorMode,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { Helmet } from "react-helmet";
 
 function CardDetail() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -40,6 +39,23 @@ function CardDetail() {
         zIndex={10}
         bg={colorMode === "light" ? "gray.300" : "gray.700"}
       >
+        <Helmet>
+          <title>{projects[params.id].title}</title>
+          <meta
+            name="description"
+            content={projects[params.id].description}
+          />
+          <meta name="keywords" content={projects[params.id].keyWords} />
+          <meta name="robots" content="index, follow" />
+          <meta property="og:title" content={projects[params.id].title} />
+          <meta
+            property="og:description"
+            content={projects[params.id].description}
+          />
+          <meta property="og:image" content={projects[params.id].img} />
+          <meta property="og:url" content="URL" />
+          <meta name="twitter:card" content="summary_large_image" />
+        </Helmet>
         <Link to="/blog">
           <Button className="space-mono-bold">BACK</Button>
         </Link>
@@ -57,23 +73,32 @@ function CardDetail() {
         // justifyContent="center"
         alignItems="center"
         // mt="5rem"
-        pos='relative'
+        pos="relative"
       >
         <Heading
-        mt={{ base: "4rem", md: "4rem", }}
-        alignSelf={"start"}
-        className="ubuntu-regular"
+          mt={{ base: "4rem", md: "4rem" }}
+          alignSelf={"start"}
+          className="ubuntu-regular"
         >
           {projects[params.id].title}
         </Heading>
-        <br/>
+        <br />
         <Divider />
-        <br/>
+        <br />
         {projects[params.id].img && (
-          <Img w={{base:"100%", md:'fit-content'}} h={{base:"fit-content", md:'35%'}}src={projects[params.id].img} />
+          <Img
+            w={{ base: "100%", md: "fit-content" }}
+            h={{ base: "fit-content", md: "35%" }}
+            src={projects[params.id].img}
+          />
         )}
         <br />
-        <Box className="poppins-regular" maxW='100%' w='fit-content' textAlign={"justify"}>
+        <Box
+          className="poppins-regular"
+          maxW="100%"
+          w="fit-content"
+          textAlign={"justify"}
+        >
           <Text>{projects[params.id].p1}</Text>
           <br />
           {projects[params.id].fh1 && <h2>{projects[params.id].fH1}</h2>}
@@ -105,7 +130,16 @@ function CardDetail() {
             <Text>{projects[params.id].conclusion}</Text>
           )}
           <br />
-          {projects[params.id].coffee && <Text display='flex' alignSelf='center' w='fit-content' h='fit-content'>{projects[params.id].coffee}</Text> }
+          {projects[params.id].coffee && (
+            <Text
+              display="flex"
+              alignSelf="center"
+              w="fit-content"
+              h="fit-content"
+            >
+              {projects[params.id].coffee}
+            </Text>
+          )}
           <br />
         </Box>
       </Box>
