@@ -18,42 +18,45 @@ function About() {
       h={"fit-content"}
       minH="100vh"
       alignItems={"center"}
-      justifyContent={"center"}
+      // justifyContent={"center"}
       flexDir="column"
     >
-      <Text fontSize="4xl" alignSelf="left" mt={14} ref={aboutRef} id="about">
+      <Text fontSize="4xl" display='flex' textAlign='left' alignSelf="left" mt={10} ref={aboutRef} id="about">
         About Me
       </Text>
       <Box
         display="flex"
-        h={{ base: "80%", md: "80%" }}
+        h={{ base: "auto", md: "80%" }}
         w="100%"
         flexDir={{ base: "column", md: "row" }}
+        mb={{ base: "0", md: "4" }}
       >
         <Box
-          w={{ base: "100%", md: "65%" }}
-          h={{ base: "50%", md: "100%" }}
+          w={{ base: "100%", md: "62%" }}
+          h={{ base: "auto", md: "100%" }}
           display="flex"
           alignItems={"center"}
-          justifyContent={"center"}
+          justifyContent={"space"}
         >
-          <Text>Flex</Text>
+          <Text textAlign='justify'>{aboutMe}</Text>
         </Box>
         <Box
           w={{ base: "100%", md: "35%" }}
-          h={{ base: "100%", md: "100%" }}
+          h={{ base: "fit-content", md: "100%" }}
+          my={{ base: "4", md: "0" }}
           display="flex"
           alignItems={"center"}
           justifyContent={"center"}
           flexDir={"column"}
+          ml={{ base: "0", md: "4" }}
         >
-          <Text alignSelf="left">Use for Work and Fun</Text>
+          <Text textAlign="left">Use for Work and Fun</Text>
           <Box
             display="flex"
             flexDir="row"
             flexWrap="wrap"
             alignItems="center"
-            h={{ base: "100%", md: "40%" }}
+            h={{ base: "15rem", md: "40%" }}
             justifyContent="space-between"
           >
             {skills.map((skill, index) => (

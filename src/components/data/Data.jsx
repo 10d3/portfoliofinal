@@ -106,34 +106,23 @@ export const skills = [
 ];
 export const aboutMe = (
   <>
-    Hello! My name is Herley, and at 23 years old, I am passionate about
-    computer science and technology, with an unwavering commitment to excellence
-    in front-end development. From a young age, my fascination with computers
-    led me to explore and unravel the mysteries of the digital world. Hailing
-    from a challenging environment in Haiti, where access to technological
-    resources is limited, I grew up surrounded by the determination to overcome
-    obstacles and the creativity to find innovative solutions.<br/> My journey in the
-    realm of computer science has been shaped by adversity and perseverance. In
-    a country where resources are scarce, I have dedicated myself to cultivating
-    my skills through self-directed learning and the relentless pursuit of
-    knowledge online. Thanks to the internet, I have been able to acquire skills
-    in software development, website design, and cybersecurity, overcoming
-    geographical and socioeconomic barriers that could have hindered my
-    progress.<br/> My experience as a freelancer has provided me with the opportunity
-    to collaborate with professionals from diverse parts of the world, enriching
-    my perspective and skills. Through challenging projects, I have demonstrated
-    my ability to translate creative concepts into innovative and functional
-    digital solutions.<br/> In this portfolio, you will find a carefully curated
-    selection of my standout projects, ranging from sleek websites to
-    interactive applications and robust security solutions. Each project is the
-    result of my dedication to technical excellence and my commitment to
-    customer satisfaction.<br/> As a professional committed to continuous growth, I
-    am constantly seeking opportunities to expand my skills and knowledge.
-    Currently, I am immersed in studying the latest trends in front-end
-    technology and pursuing certifications in cybersecurity to strengthen my
-    skill set.<br/> I am available for exciting and challenging collaborations that
-    allow me to apply my experience and creativity to drive the success of
-    innovative projects. Feel free to contact me to explore how we can work
-    together to bring your digital ideas to life.
+    Hello, I'm Herley, a 21-year-old with a profound passion for computer
+    science and technology. From a young age, I've been deeply curious about all
+    things related to computing. Growing up in a country where accessing a
+    computer and electricity posed significant challenges, I was fortunate to
+    have older cousins who shared my curiosity and had access to computer
+    resources, which I leveraged for my own learning.<br/>
+    <br /> Navigating this profession in a country like Haiti has been a
+    significant challenge. Despite the obstacles, access to the internet has
+    been pivotal in my education. It has enabled me to study and acquire skills
+    in software development, website creation, and phone repair. Currently, I'm
+    focused on expanding my expertise in cybersecurity.<br/>
+    <br /> Throughout my journey, I've had the opportunity to work as a
+    freelancer with individuals from various parts of the world. In this
+    portfolio, you'll find a showcase of the diverse projects and websites I've
+    developed.<br/>
+    <br /> I am dedicated to my professional and personal growth and am open to
+    new opportunities and challenges. Please don't hesitate to reach out to me
+    for any inquiries or potential collaborations.
   </>
 );
