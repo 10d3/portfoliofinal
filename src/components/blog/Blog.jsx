@@ -94,7 +94,7 @@ function Blog() {
           {projects.map((project) => (
             <Card
             key={project.id}
-            direction={{ base: 'column', sm: 'row' }}
+            direction={{ base: 'column', sm: 'column' }}
             overflow='hidden'
             variant='outline'
             w={{ base: '100%', sm: '400px' }}
@@ -102,7 +102,7 @@ function Blog() {
           >
             <Image
               objectFit='cover'
-              maxW={{ base: '100%', sm: '200px' }}
+              maxW={{ base: '100%', sm: '100%' }}
               src={project.img}
               alt='Caffe Latte'
             />
