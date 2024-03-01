@@ -41,7 +41,7 @@ function CardDetail() {
         bg={colorMode === "light" ? "gray.300" : "gray.700"}
       >
         <Link to="/blog">
-          <Button className="space-mono-bold">Back</Button>
+          <Button className="space-mono-bold">BACK</Button>
         </Link>
         <Button onClick={toggleColorMode}>
           {isLightMode ? <MoonIcon /> : <SunIcon />}

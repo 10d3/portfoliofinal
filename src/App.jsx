@@ -10,12 +10,12 @@ function App() {
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const portfolioRef = useRef(null);
-  const blogRef = useRef(null);
+  const contactRef = useRef(null);
 
 
 
   return (
-    <RefContext.Provider value={{homeRef, aboutRef, portfolioRef, blogRef}}>
+    <RefContext.Provider value={{homeRef, aboutRef, portfolioRef, contactRef}}>
       <Flex
         // w="100%"
         h="100vh"

@@ -2,7 +2,7 @@ import Home from "../home/Home";
 import About from "../about/About";
 import { Flex } from "@chakra-ui/react";
 import Portfolio from "../portfolio/Portfolio";
-import Blog from "../blog/Blog";
+import Contact from "../contact/Contact";
 
 export default function Body() {
   return (
@@ -10,7 +10,7 @@ export default function Body() {
       <Home />
       <Portfolio />
       <About />
-      {/* <Blog /> */}
+      <Contact />
     </Flex>
   );
 }

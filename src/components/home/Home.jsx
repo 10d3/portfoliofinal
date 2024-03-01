@@ -5,9 +5,9 @@ import RefContext from "../../context/RefContext";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { textVariants, iconVars } from "../animations/Animations";
 import { socials, infoHome } from "../data/Data";
+import { Helmet } from "react-helmet";
 
 function Home() {
-
   const { homeRef } = useContext(RefContext);
 
   const isInView = useInView(homeRef, { once: true });
@@ -32,6 +32,10 @@ function Home() {
       // marginTop={"2"}
       marginBottom={{ base: "35", md: "2" }}
     >
+      <Helmet>
+        <title>Home Page</title>
+        <meta name="description" content="Helmet application" />
+      </Helmet>
       <Box
         display={"flex"}
         flex={"1"}
@@ -42,7 +46,7 @@ function Home() {
         alignItems={"flex-start"}
         justifyContent={"center"}
       >
-        <Box display={"flex"} w='100%' flexDir={"column"}>
+        <Box display={"flex"} w="100%" flexDir={"column"}>
           <Box lineHeight={1}>
             <Text
               fontSize={"2xl"}
@@ -59,7 +63,12 @@ function Home() {
               {infoHome.name}
             </Text>
           </Box>
-          <Text className="poppins-regular" fontSize={"1.2rem"} mt={"10px"} lineHeight={1.2}>
+          <Text
+            className="poppins-regular"
+            fontSize={"1.2rem"}
+            mt={"10px"}
+            lineHeight={1.2}
+          >
             {infoHome.description}
           </Text>
         </Box>
@@ -115,7 +124,7 @@ function Home() {
       >
         <Img
           src={imageP}
-          borderRadius='30'
+          borderRadius="30"
           alt="imageP"
           w={{ base: "60%", md: "auto" }}
           h={"fit-content"}

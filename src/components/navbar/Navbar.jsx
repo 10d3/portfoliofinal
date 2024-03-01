@@ -35,14 +35,14 @@ function useMobileView() {
 }
 
 export default function Navbar() {
-  const { homeRef, aboutRef, portfolioRef } = useContext(RefContext);
+  const { homeRef, aboutRef, portfolioRef, contactRef } = useContext(RefContext);
   const isMobile = useMobileView();
 
   const links = [
     { name: "Home", href: homeRef },
     { name: "Portfolio", href: portfolioRef },
     { name: "About", href: aboutRef },
-    // { name: "Blog", href: blogRef },
+    { name: "Contact", href: contactRef },
   ];
 
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -151,7 +151,7 @@ export default function Navbar() {
               target={link.href}
               className="link"
             >
-              {link.name}
+              {link.name.toUpperCase()}
             </a>
           </Text>
         ))}
@@ -163,7 +163,7 @@ export default function Navbar() {
             // fontFamily={'"Space Mono", monospace'}
             // fontWeight={'700'}
           >
-            Blog
+            BLOG
           </Text>
         </Link>
         <Button onClick={toggleColorMode}>
