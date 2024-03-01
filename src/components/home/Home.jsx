@@ -51,14 +51,15 @@ function Home() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
+              className="poppins-regular"
             >
               {infoHome.title}
             </Text>
-            <Text fontSize={"4xl"} fontWeight={"bold"}>
+            <Text className="ubuntu-bold" fontSize={"4xl"} fontWeight={"bold"}>
               {infoHome.name}
             </Text>
           </Box>
-          <Text fontSize={"1.2rem"} fontWeight={"100"} mt={"10px"} lineHeight={1.2}>
+          <Text className="poppins-regular" fontSize={"1.2rem"} mt={"10px"} lineHeight={1.2}>
             {infoHome.description}
           </Text>
         </Box>
@@ -74,6 +75,7 @@ function Home() {
           initial="hidden"
           animate={mainControls}
           transition="0.3s linear"
+          className="poppins-regular"
         >
           Download CV
         </Button>
@@ -117,6 +119,7 @@ function Home() {
           alt="imageP"
           w={{ base: "60%", md: "auto" }}
           h={"fit-content"}
+          justifyContent={"center"}
           alignSelf={{ base: "flex-end", md: "center" }}
         />
       </Box>

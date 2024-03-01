@@ -12,8 +12,9 @@ import "./navbar.css";
 import { useContext, useEffect, useState } from "react";
 import RefContext from "../../context/RefContext";
 import { motion } from "framer-motion";
-import {boxMenuVars, menuVars, linkVars} from '../animations/Animations'
+import { boxMenuVars, menuVars, linkVars } from "../animations/Animations";
 import { Link } from "react-router-dom";
+import "../../font.css";
 
 function useMobileView() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -78,13 +79,11 @@ export default function Navbar() {
         w="100%"
       >
         <Text
-          className="brand-text"
+          className="space-mono-bold"
           as={motion.p}
           variants={boxMenuVars}
           initial="initial"
           animate="animate"
-          fontFamily={"Open Sans"}
-          fontWeight={"bold"}
           fontSize={"xl"}
           cursor={"pointer"}
         >
@@ -127,15 +126,15 @@ export default function Navbar() {
           <Text
             key={index}
             // target={link.href}
-            px={{base:'0',md:"10px"}}
+            px={{ base: "0", md: "10px" }}
             color="purple.400"
             w="100%"
             // h="25%"
-            h={'fit-content'}
+            h={"fit-content"}
             display="flex"
             alignItems="center"
             justifyContent="center"
-            fontSize={{base:"2xl",md:"md"}}
+            fontSize={{ base: "2xl", md: "md" }}
             // fontWeight="bold"
             cursor={"pointer"}
             onClick={isOpen ? onClose : onOpen}
@@ -143,6 +142,7 @@ export default function Navbar() {
             variants={isMobile ? linkVars : {}}
             initial={isMobile ? "initial" : ""}
             animate={isMobile ? (isOpen ? "open" : "") : ""}
+            className="space-mono-bold"
           >
             <a
               onClick={() =>
@@ -155,7 +155,17 @@ export default function Navbar() {
             </a>
           </Text>
         ))}
-        <Link className="link" to="/blog"><Text fontSize={{base:"2xl",md:"md"}} color='purple.400'>Blog</Text></Link>
+        <Link className="link" to="/blog">
+          <Text
+            className="space-mono-bold"
+            fontSize={{ base: "2xl", md: "md" }}
+            color="purple.400"
+            // fontFamily={'"Space Mono", monospace'}
+            // fontWeight={'700'}
+          >
+            Blog
+          </Text>
+        </Link>
         <Button onClick={toggleColorMode}>
           {isLightMode ? <MoonIcon /> : <SunIcon />}
         </Button>

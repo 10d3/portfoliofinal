@@ -3,8 +3,8 @@ import { extendTheme } from "@chakra-ui/react";
 export const theme = extendTheme({
   colors: {
     light: {
-      primary: "#007bff", // Adjust these colors to your preference
-      secondary: "#6c757d",
+      primary: "#f3eeea", // Adjust these colors to your preference
+      secondary: "#ebe3d5",
       text: "#1a202c",
       background: "#fff",
     },
@@ -16,8 +16,9 @@ export const theme = extendTheme({
     },
   },
   fonts: {
-    heading: "Roboto Slab",
+    Heading: "Roboto Slab",
     body: `'Raleway', sans-serif`,
     Text: "DM Sans",
+    Button: "Roboto Slab",
   },
 });
