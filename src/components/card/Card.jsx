@@ -24,11 +24,11 @@ export default function Cards({ projects }) {
         />
         <Stack mt="6" spacing="3">
           <HStack justifyContent='space-between'>
-          <Heading size="md">{projects.title}</Heading>
-          <Button>{projects.typePro[0]}</Button>
+          <Heading className="ubuntu-regular" size="md">{projects.title}</Heading>
+          <Button className="space-mono-regular">{projects.typePro[0]}</Button>
           </HStack>
-          <Text>{projects.description}</Text>
-          <ButtonGroup spacing="2">
+          <Text className="poppins-regular">{projects.description}</Text>
+          <ButtonGroup className="space-mono-regular" spacing="2">
             {projects.technologies.map((tech, index) => {
               return (
                 <Button key={index} size="sm">

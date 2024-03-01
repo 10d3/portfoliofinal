@@ -59,7 +59,7 @@ function Portfolio() {
         transition="0.8s linear"
         pt={14}
       >
-        <Text fontSize="4xl" alignSelf="left">
+        <Text className="ubuntu-regular" fontSize="4xl" alignSelf="left">
           Portfolio
         </Text>
       </Box>
@@ -97,6 +97,7 @@ function Portfolio() {
               onClick={() => {
                 setPent(item);
               }}
+              className="space-mono-regular"
             >
               {item}
             </Button>

@@ -3,6 +3,7 @@ import About from "../about/About";
 import { Flex } from "@chakra-ui/react";
 import Portfolio from "../portfolio/Portfolio";
 import Contact from "../contact/Contact";
+import Footer from "../footer/Footer";
 
 export default function Body() {
   return (
@@ -11,6 +12,7 @@ export default function Body() {
       <Portfolio />
       <About />
       <Contact />
+      <Footer />
     </Flex>
   );
 }

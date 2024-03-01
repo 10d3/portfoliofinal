@@ -16,12 +16,11 @@ function About() {
       w={"100%"}
       pos={"relative"}
       h={"fit-content"}
-      minH="100vh"
       alignItems={"center"}
       // justifyContent={"center"}
       flexDir="column"
     >
-      <Text fontSize="4xl" display='flex' textAlign='left' alignSelf="left" mt={10} ref={aboutRef} id="about">
+      <Text className="ubuntu-regular" fontSize="4xl" display='flex' textAlign='left' alignSelf="left" mt={10} ref={aboutRef} id="about">
         About Me
       </Text>
       <Box
@@ -38,7 +37,7 @@ function About() {
           alignItems={"center"}
           justifyContent={"space"}
         >
-          <Text textAlign='justify'>{aboutMe}</Text>
+          <Text className="poppins-regular" textAlign='justify'>{aboutMe}</Text>
         </Box>
         <Box
           w={{ base: "100%", md: "35%" }}
@@ -50,7 +49,7 @@ function About() {
           flexDir={"column"}
           ml={{ base: "0", md: "4" }}
         >
-          <Text textAlign="left">Use for Work and Fun</Text>
+          <Text className="ubuntu-regular" textAlign="left">Use for Work and Fun</Text>
           <Box
             display="flex"
             flexDir="row"
@@ -68,6 +67,7 @@ function About() {
                 whileInView="animate"
                 viewport={{ once: true }}
                 key={index}
+                className="space-mono-regular"
               >
                 {skill}
               </Button>
@@ -94,10 +94,10 @@ function About() {
             h="auto"
           >
             <CardBody>
-              <Text fontSize={"2xl"} fontWeight={"bold"}>
+              <Text className="ubuntu-regular" fontSize={"2xl"} fontWeight={"bold"}>
                 {item.title}
               </Text>
-              <Text fontSize={"14px"} fontWeight={"100"} mt={"10px"}>
+              <Text className="poppins-regular" fontSize={"14px"} fontWeight={"100"} mt={"10px"}>
                 {item.description}
               </Text>
             </CardBody>
