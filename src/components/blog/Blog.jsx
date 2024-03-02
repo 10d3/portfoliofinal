@@ -3,13 +3,10 @@
 import {
   Box,
   Button,
-  ButtonGroup,
   Card,
   CardBody,
   CardFooter,
-  Divider,
   Flex,
-  HStack,
   Heading,
   Image,
   Stack,
@@ -17,7 +14,6 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 // import BlogCard from "./blogCard/BlogCard";
-import Cards from "../card/Card";
 import { projects } from "../data/BlogData";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -25,8 +21,6 @@ import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { Helmet } from "react-helmet";
 
 function Blog() {
-  // const { blogRef } = useContext(RefContext);
-
   const { colorMode, toggleColorMode } = useColorMode();
   const [isLightMode, setIsLightMode] = useState(true);
 
@@ -37,24 +31,29 @@ function Blog() {
   return (
     <Flex
       w={"100vw"}
-      minH={"100vh"}
+      H={"100vh"}
+      overflow={"auto"}
       alignItems={"center"}
       // justifyContent={"center"}
       py={"2"}
       flexDir={"column"}
+      bg={colorMode === "light" ? "#cdf5fd" : "#265073"}
     >
       <Helmet>
         <title>Welcome to My Blog</title>
         <meta
           name="description"
-          content="Description of my page for SEO purposes."
+          content="Mastering React Hooks: Comprehensive Tutorials on Our Blog"
         />
         <meta
           name="keywords"
           content="Blog, Welcome, Articles, Posts, Topics, Insights, Opinions, Personal Blog, Commentary, Discussion, Blogging, Writing, Readers, Community"
         />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Mastering React Hooks: Comprehensive Tutorials on Our Blog" />
+        <meta
+          property="og:title"
+          content="Mastering React Hooks: Comprehensive Tutorials on Our Blog"
+        />
         <meta
           property="og:description"
           content="Welcome to our blog! Explore our comprehensive tutorials on React Hooks. Learn about useState, useEffect, useContext, and more to enhance your React development skills."
@@ -76,7 +75,9 @@ function Blog() {
         justifyContent="space-between"
         // mb={4}
         zIndex={10}
-        bg={colorMode === "light" ? "gray.300" : "gray.700"}
+        bg={colorMode === "light" ? "#00A9FF" : "#1D3C56"}
+        transition="background-color 1s"
+        color={colorMode === "light" ? "#cdf5fd" : "white"}
       >
         <Link to="/">
           <Button className="space-mono-bold">HOME</Button>
@@ -91,6 +92,7 @@ function Blog() {
         gap={"8"}
         display="flex"
         flexDir="column"
+        h={"auto"}
         // justifyContent="center"
         alignItems="center"
         mt="5rem"
@@ -112,7 +114,9 @@ function Blog() {
           flexWrap="wrap"
           justifyContent="center"
           alignItems="center"
+          bg={colorMode === "light" ? "#cdf5fd" : "#265073"}
           // h='70%'
+          h={"auto"}
         >
           {projects.map((project) => (
             <Card

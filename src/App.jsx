@@ -1,4 +1,4 @@
-import { Flex } from "@chakra-ui/react";
+import { Flex, useColorMode } from "@chakra-ui/react";
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
 import Body from "./components/body/Body";
@@ -12,6 +12,7 @@ function App() {
   const portfolioRef = useRef(null);
   const contactRef = useRef(null);
 
+  const { colorMode } = useColorMode();
 
 
   return (
@@ -25,6 +26,7 @@ function App() {
         p={"0"}
         alignItems={"center"}
         justifyContent={"center"}
+        bg={colorMode === "light" ? "#cdf5fd" : "#265073"}
       >
         <Navbar />
         <Body />

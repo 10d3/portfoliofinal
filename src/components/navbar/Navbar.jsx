@@ -35,7 +35,8 @@ function useMobileView() {
 }
 
 export default function Navbar() {
-  const { homeRef, aboutRef, portfolioRef, contactRef } = useContext(RefContext);
+  const { homeRef, aboutRef, portfolioRef, contactRef } =
+    useContext(RefContext);
   const isMobile = useMobileView();
 
   const links = [
@@ -69,7 +70,9 @@ export default function Navbar() {
       flexDir={{ base: "column", md: "row" }}
       zIndex="4"
       // bg={{ base: isOpen ? "red.500" : "white", md: "white" }}
-      bg={colorMode === "light" ? "gray.300" : "gray.700"}
+      bg={colorMode === "light" ? "#00A9FF" : "#1D3C56"}
+      transition="background-color 1s"
+      color={colorMode === "light" ? "#cdf5fd" : "white"}
     >
       <Box
         display="flex"
@@ -79,7 +82,7 @@ export default function Navbar() {
         w="100%"
       >
         <Text
-          className="space-mono-bold"
+          className="ubuntu-bold"
           as={motion.p}
           variants={boxMenuVars}
           initial="initial"
@@ -127,7 +130,7 @@ export default function Navbar() {
             key={index}
             // target={link.href}
             px={{ base: "0", md: "10px" }}
-            color="purple.400"
+            color={colorMode === "light" ? "#cdf5fd" : "white"}
             w="100%"
             // h="25%"
             h={"fit-content"}
@@ -142,7 +145,7 @@ export default function Navbar() {
             variants={isMobile ? linkVars : {}}
             initial={isMobile ? "initial" : ""}
             animate={isMobile ? (isOpen ? "open" : "") : ""}
-            className="space-mono-bold"
+            className="ubuntu-bold"
           >
             <a
               onClick={() =>
@@ -157,16 +160,21 @@ export default function Navbar() {
         ))}
         <Link className="link" to="/blog">
           <Text
-            className="space-mono-bold"
+            className="ubuntu-bold"
             fontSize={{ base: "2xl", md: "md" }}
-            color="purple.400"
+            color={colorMode === "light" ? "#cdf5fd" : "white"}
             // fontFamily={'"Space Mono", monospace'}
             // fontWeight={'700'}
           >
             BLOG
           </Text>
         </Link>
-        <Button onClick={toggleColorMode}>
+        <Button
+          bg={colorMode === "light" ? "#00A9FF" : "gray.700"}
+          color={colorMode === "light" ? "#cdf5fd" : "white"}
+          onClick={toggleColorMode}
+          fontSize={{ base: "2xl", md: "md" }}
+        >
           {isLightMode ? <MoonIcon /> : <SunIcon />}
         </Button>
       </Box>
@@ -177,7 +185,7 @@ export default function Navbar() {
         alignItems={"center"}
         justifyContent={"center"}
       >
-        <Text>© 2024 10d3</Text>
+        <Text color={colorMode === "light" ? "#cdf5fd" : "white"}>© 2024 10d3</Text>
       </Box>
     </Flex>
   );

@@ -22,7 +22,7 @@ export const seaBut = ["Design", "Front", "Back", "Cyber", "all"];
 export const projects = [
   {
     id: 0,
-    title: "project 1",
+    title: "Portfolio",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     technologies: ["react", "node", "express", "mongo"],
     image: "",
@@ -75,14 +75,17 @@ export const info = [
   {
     title: "UI/UX Design",
     description: "At in proin consequat ut cursus venenatis sapien.",
+    skills: ["Figma", "Adobe XD", "Photoshop"],
   },
   {
-    title: "Front Developer",
+    title: "Full-Stack",
     description: "At in proin consequat ut cursus venenatis sapien.",
+    skills: ["HTML", "CSS", "JS", "React", "Node", "Express", "MongoDB"],
   },
   {
     title: "Cyber Security",
     description: "At in proin consequat ut cursus venenatis sapien.",
+    skills: ["Kali Linux", "Nmap", "Wireshark", "Metasploit"],
   },
 ];
 

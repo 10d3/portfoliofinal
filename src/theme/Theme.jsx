@@ -6,13 +6,13 @@ export const theme = extendTheme({
       primary: "#f3eeea", // Adjust these colors to your preference
       secondary: "#ebe3d5",
       text: "#1a202c",
-      background: "#fff",
+      background: "#cdf5fd",
     },
     dark: {
       primary: "#563d7c",
       secondary: "#404c56",
       text: "#f2f2f2",
-      background: "#1a202c",
+      background: "#265073",
     },
   },
   fonts: {

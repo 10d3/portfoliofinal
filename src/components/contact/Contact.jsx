@@ -36,10 +36,10 @@ function Contact() {
       <Box>
         <Heading className="ubuntu-regular">Get in touch</Heading>
         <br />
-        <Text className="poppins-regular" fontSize="xl">
+        <Text className="poppins-regular" fontSize="1rem">
           I’m always up for a chat!
         </Text>
-        <Text className="poppins-regular" fontSize="xl">
+        <Text className="poppins-regular" fontSize="1rem">
           I can be reached at{" "}
           <a className="space-mono-regular-italic" href={contact[0].link}>
             marcherleyantoine@gmail.com

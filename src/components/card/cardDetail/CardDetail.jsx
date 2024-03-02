@@ -23,7 +23,14 @@ function CardDetail() {
 
   const params = useParams();
   return (
-    <>
+    <Box
+      bg={colorMode === "light" ? "#cdf5fd" : "#265073"}
+      display={"flex"}
+      alignItems={"center"}
+      flexDir={"column"}
+      h={"100vh"}
+      overflow={"auto"}
+    >
       <Box
         as="nav"
         pos={"sticky"}
@@ -37,14 +44,13 @@ function CardDetail() {
         justifyContent="space-between"
         // mb={4}
         zIndex={10}
-        bg={colorMode === "light" ? "gray.300" : "gray.700"}
+        bg={colorMode === "light" ? "#00A9FF" : "#1D3C56"}
+        transition="background-color 1s"
+        color={colorMode === "light" ? "#cdf5fd" : "white"}
       >
         <Helmet>
           <title>{projects[params.id].title}</title>
-          <meta
-            name="description"
-            content={projects[params.id].description}
-          />
+          <meta name="description" content={projects[params.id].description} />
           <meta name="keywords" content={projects[params.id].keyWords} />
           <meta name="robots" content="index, follow" />
           <meta property="og:title" content={projects[params.id].title} />
@@ -74,6 +80,7 @@ function CardDetail() {
         alignItems="center"
         // mt="5rem"
         pos="relative"
+        bg={colorMode === "light" ? "#cdf5fd" : "#265073"}
       >
         <Heading
           mt={{ base: "4rem", md: "4rem" }}
@@ -143,7 +150,7 @@ function CardDetail() {
           <br />
         </Box>
       </Box>
-    </>
+    </Box>
   );
 }
 

@@ -1,4 +1,12 @@
-import { Box, Button, Flex, Img, Stack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Img,
+  Stack,
+  Text,
+  useColorMode,
+} from "@chakra-ui/react";
 import imageP from "../../../public/images/imageP.png";
 import { forwardRef, useContext, useEffect } from "react";
 import RefContext from "../../context/RefContext";
@@ -9,6 +17,7 @@ import { Helmet } from "react-helmet";
 
 function Home() {
   const { homeRef } = useContext(RefContext);
+  const { colorMode, toggleColorMode } = useColorMode();
 
   const isInView = useInView(homeRef, { once: true });
   const mainControls = useAnimation();
@@ -59,7 +68,7 @@ function Home() {
             >
               {infoHome.title}
             </Text>
-            <Text className="ubuntu-bold" fontSize={"4xl"} fontWeight={"bold"}>
+            <Text className="ubuntu-bold" fontSize={"5xl"} fontWeight={"bold"}>
               {infoHome.name}
             </Text>
           </Box>
@@ -73,7 +82,7 @@ function Home() {
           </Text>
         </Box>
         <Button
-          bg="blue.300"
+          bg={colorMode === "light" ? "#00A9FF" : "#cdf5fd"}
           as={motion.button}
           size="md"
           w={"fit-content"}
@@ -96,7 +105,7 @@ function Home() {
         >
           {socials.map((social, index) => (
             <Text
-              color={"purple.400"}
+              color={colorMode === "light" ? "#00A9FF" : "#cdf5fd"}
               _hover={{ color: "red.200" }}
               key={index}
               fontSize={"3xl"}

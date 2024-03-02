@@ -1,10 +1,10 @@
-import { Flex, Box, Text, Card, CardBody, Button } from "@chakra-ui/react";
+import { Flex, Box, Text, Card, CardBody, Button, CardHeader } from "@chakra-ui/react";
 import { forwardRef, useContext } from "react";
 import RefContext from "../../context/RefContext";
 // import Milestones from "../timeline/Timeline";
 import { motion } from "framer-motion";
 import { info, skills, aboutMe } from "../data/Data";
-import {skillsVariants} from '../animations/Animations'
+import { skillsVariants } from "../animations/Animations";
 
 function About() {
   const { aboutRef } = useContext(RefContext);
@@ -20,36 +20,49 @@ function About() {
       // justifyContent={"center"}
       flexDir="column"
     >
-      <Text className="ubuntu-regular" fontSize="4xl" display='flex' textAlign='left' alignSelf="left" mt={10} ref={aboutRef} id="about">
+      <Text
+        className="ubuntu-regular"
+        fontSize="4xl"
+        display="flex"
+        textAlign="left"
+        alignSelf="left"
+        mt={10}
+        ref={aboutRef}
+        id="about"
+      >
         About Me
       </Text>
       <Box
         display="flex"
         h={{ base: "auto", md: "80%" }}
         w="100%"
-        flexDir={{ base: "column", md: "row" }}
+        flexDir={{ base: "column", md: "column" }}
         mb={{ base: "0", md: "4" }}
       >
         <Box
-          w={{ base: "100%", md: "62%" }}
+          w={{ base: "100%", md: "100%" }}
           h={{ base: "auto", md: "100%" }}
           display="flex"
           alignItems={"center"}
           justifyContent={"space"}
         >
-          <Text className="poppins-regular" textAlign='justify'>{aboutMe}</Text>
+          <Text className="poppins-regular" textAlign="justify">
+            {aboutMe}
+          </Text>
         </Box>
         <Box
-          w={{ base: "100%", md: "35%" }}
+          w={{ base: "100%", md: "100%" }}
           h={{ base: "fit-content", md: "100%" }}
           my={{ base: "4", md: "0" }}
-          display="flex"
+          display="none"
           alignItems={"center"}
           justifyContent={"center"}
           flexDir={"column"}
           ml={{ base: "0", md: "4" }}
         >
-          <Text className="ubuntu-regular" textAlign="left">Use for Work and Fun</Text>
+          <Text className="ubuntu-regular" textAlign="left">
+            Use for Work and Fun
+          </Text>
           <Box
             display="flex"
             flexDir="row"
@@ -93,14 +106,44 @@ function About() {
             key={index}
             h="auto"
           >
-            <CardBody>
-              <Text className="ubuntu-regular" fontSize={"2xl"} fontWeight={"bold"}>
+            <CardHeader>
+              <Text
+                className="ubuntu-regular"
+                fontSize={"2xl"}
+                fontWeight={"bold"}
+              >
                 {item.title}
               </Text>
-              <Text className="poppins-regular" fontSize={"14px"} fontWeight={"100"} mt={"10px"}>
+              <Text
+                className="poppins-regular"
+                fontSize={"14px"}
+                fontWeight={"100"}
+                mt={"10px"}
+              >
                 {item.description}
               </Text>
-            </CardBody>
+            </CardHeader>
+            {/* <CardBody>
+              <Box
+                display="flex"
+                flexDir="row"
+                flexWrap="wrap"
+                alignItems="center"
+                justifyContent="center"
+                gap={2}
+              >
+                {item.skills.map((skill, index) => (
+                  <Button
+                    key={index}
+                    className="space-mono-regular"
+                    fontSize={"14px"}
+                    fontWeight={"100"}
+                  >
+                    {skill}
+                  </Button>
+                ))}
+              </Box>
+            </CardBody> */}
           </Card>
         ))}
       </Box>
