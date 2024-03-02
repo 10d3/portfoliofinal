@@ -15,10 +15,10 @@ export const theme = extendTheme({
       background: "#265073",
     },
   },
-  fonts: {
-    Heading: "Roboto Slab",
-    body: `'Raleway', sans-serif`,
-    Text: "DM Sans",
-    Button: "Roboto Slab",
-  },
+  // fonts: {
+  //   Heading: "Roboto Slab",
+  //   body: `'Raleway', sans-serif`,
+  //   Text: "DM Sans",
+  //   Button: "Roboto Slab",
+  // },
 });

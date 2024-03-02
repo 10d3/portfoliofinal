@@ -30,10 +30,12 @@ function CardDetail() {
       flexDir={"column"}
       h={"100vh"}
       overflow={"auto"}
+      w={"100vw"}
     >
       <Box
         as="nav"
-        pos={"sticky"}
+        pos={"fixed"}
+        right='0'
         top="0"
         display="flex"
         w={{ md: "100%", base: "100%" }}
@@ -63,7 +65,7 @@ function CardDetail() {
           <meta name="twitter:card" content="summary_large_image" />
         </Helmet>
         <Link to="/blog">
-          <Button className="space-mono-bold">BACK</Button>
+          <Button className="ubuntu-bold">BACK</Button>
         </Link>
         <Button onClick={toggleColorMode}>
           {isLightMode ? <MoonIcon /> : <SunIcon />}

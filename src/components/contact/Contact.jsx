@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import RefContext from "../../context/RefContext";
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Box, Heading, Text, useColorMode } from "@chakra-ui/react";
 
 function Contact() {
   const { contactRef } = useContext(RefContext);
+
+  const { colorMode } = useColorMode();
   const contact = [
     {
       name: "fa-solid fa-inbox",
@@ -31,6 +33,7 @@ function Contact() {
       alignItems="center"
       justifyContent="center"
       flexDir='column'
+      mb={4}
     >
         <Heading mb='4' className="ubuntu-regular">Contact</Heading>
       <Box>
@@ -48,7 +51,7 @@ function Contact() {
         </Text>
         <Box display="flex" flexDir="row" gap={4}>
           {contact.map((item, index) => (
-            <Text fontSize="4xl" key={index}>
+            <Text color={colorMode === "light" ? "#00A9FF" : "#cdf5fd"} fontSize="4xl" key={index}>
               <a href={item.link}>
                 <i className={item.name}></i>
               </a>

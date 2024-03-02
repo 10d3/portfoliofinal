@@ -35,7 +35,7 @@ function Blog() {
       overflow={"auto"}
       alignItems={"center"}
       // justifyContent={"center"}
-      py={"2"}
+      pb={"2"}
       flexDir={"column"}
       bg={colorMode === "light" ? "#cdf5fd" : "#265073"}
     >
@@ -65,6 +65,7 @@ function Blog() {
       <Box
         as="nav"
         pos={"fixed"}
+        right='0'
         top="0"
         display="flex"
         w={{ md: "100%", base: "100%" }}
@@ -80,7 +81,7 @@ function Blog() {
         color={colorMode === "light" ? "#cdf5fd" : "white"}
       >
         <Link to="/">
-          <Button className="space-mono-bold">HOME</Button>
+          <Button className="ubuntu-bold">HOME</Button>
         </Link>
         <Button onClick={toggleColorMode}>
           {isLightMode ? <MoonIcon /> : <SunIcon />}
@@ -126,6 +127,8 @@ function Blog() {
               variant="outline"
               w={{ base: "100%", sm: "400px" }}
               h={{ base: "fit-content", sm: "fit-content" }}
+              bg={colorMode === "light" ? "#00A9FF" : "#1D3C56"}
+              color={colorMode === "light" ? "#cdf5fd" : "white"}
             >
               <Image
                 objectFit="cover"
@@ -146,7 +149,7 @@ function Blog() {
                   <Button
                     className="ubuntu-regular"
                     variant="solid"
-                    colorScheme="blue"
+                    bg={colorMode === "light" ? "#cdf5fd" : "#265073"}
                   >
                     <Link to={`/blog/${project.id}`}>Read More</Link>
                   </Button>

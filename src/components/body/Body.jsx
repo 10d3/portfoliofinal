@@ -8,7 +8,14 @@ import Footer from "../footer/Footer";
 export default function Body() {
   const { colorMode } = useColorMode();
   return (
-    <Flex bg={colorMode === "light" ? "#cdf5fd" : "#265073"} px={{base:'5%', md:'15%'}} h={"100vh"} flexDir={'column'} overflow={'auto'}>
+    <Flex
+      bg={colorMode === "light" ? "#cdf5fd" : "#265073"}
+      px={{ base: "5%", md: "15%" }}
+      h={"100vh"}
+      flexDir={"column"}
+      overflow={"auto"}
+      w={"100vw"}
+    >
       <Home />
       <Portfolio />
       <About />

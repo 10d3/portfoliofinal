@@ -17,7 +17,7 @@ import { Helmet } from "react-helmet";
 
 function Home() {
   const { homeRef } = useContext(RefContext);
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode } = useColorMode();
 
   const isInView = useInView(homeRef, { once: true });
   const mainControls = useAnimation();
@@ -94,6 +94,7 @@ function Home() {
           animate={mainControls}
           transition="0.3s linear"
           className="poppins-regular"
+          color={colorMode === "light" ? "#cdf5fd" : "#265073"}
         >
           Download CV
         </Button>

@@ -18,7 +18,7 @@ function App() {
   return (
     <RefContext.Provider value={{homeRef, aboutRef, portfolioRef, contactRef}}>
       <Flex
-        // w="100%"
+        w="100vw"
         h="100vh"
         // maxW={{base:"90%",md:'75%'}}
         flexDirection={"column"}

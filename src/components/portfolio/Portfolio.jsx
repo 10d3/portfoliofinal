@@ -1,12 +1,14 @@
-import { Box, Button, Flex, HStack, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, HStack, Text, useColorMode } from "@chakra-ui/react";
 import { forwardRef, useContext, useEffect, useState } from "react";
 import RefContext from "../../context/RefContext";
 import Cards from "../card/Card";
 import { motion, useInView, useAnimation } from "framer-motion";
-import {projects, seaBut} from '../data/Data'
+import { projects, seaBut } from "../data/Data";
 
 function Portfolio() {
   const { portfolioRef } = useContext(RefContext);
+
+  const { colorMode } = useColorMode();
 
   const [pent, setPent] = useState("all");
 
@@ -24,7 +26,7 @@ function Portfolio() {
   }, [isInView]);
 
   const filtButtonVars = {
-    hidden:{
+    hidden: {
       opacity: 0,
       scaleY: 0,
       // transition: { delay: custom * 0.1 },
@@ -88,16 +90,17 @@ function Portfolio() {
               variants={filtButtonVars}
               initial="hidden"
               whileInView="animate"
-              viewport={{once: true}}
+              viewport={{ once: true }}
               width="24.5%"
               key={index}
               fontSize="0.8rem"
               fontWeight="bold"
-              color="blue.500"
+              bg={colorMode === "light" ? "#00A9FF" : "#cdf5fd"}
+              color={colorMode === "light" ? "#cdf5fd" : "#265073"}
               onClick={() => {
                 setPent(item);
               }}
-              className="space-mono-regular"
+              className="ubuntu-regular"
             >
               {item}
             </Button>

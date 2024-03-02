@@ -17,7 +17,7 @@ import {
 export default function Cards({ projects }) {
   const { colorMode } = useColorMode();
   return (
-    <Card bg={colorMode === "light" ? "#00A9FF" : "#1D3C56"} maxW="sm">
+    <Card bg={colorMode === "light" ? "#00A9FF" : "#1D3C56"} color={colorMode === "light" ? "#cdf5fd" : "#fff"} maxW="sm">
       <CardBody>
         <Image
           src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
@@ -25,9 +25,13 @@ export default function Cards({ projects }) {
           borderRadius="lg"
         />
         <Stack mt="6" spacing="3">
-          <HStack justifyContent='space-between'>
-          <Heading className="ubuntu-regular" size="md">{projects.title}</Heading>
-          <Button className="space-mono-regular">{projects.typePro[0]}</Button>
+          <HStack justifyContent="space-between">
+            <Heading className="ubuntu-regular" size="md">
+              {projects.title}
+            </Heading>
+            <Button className="space-mono-regular">
+              {projects.typePro[0]}
+            </Button>
           </HStack>
           <Text className="poppins-regular">{projects.description}</Text>
           <ButtonGroup className="space-mono-regular" spacing="2">
@@ -43,13 +47,26 @@ export default function Cards({ projects }) {
       </CardBody>
       <Divider />
       <CardFooter>
-        <ButtonGroup w='100%' display='flex' flexDir='row' justifyContent='space-between' >
-          <Button variant="solid" colorScheme="blue">
+        <ButtonGroup
+          w="100%"
+          display="flex"
+          flexDir="row"
+          justifyContent="space-between"
+        >
+          <Button
+            variant="solid"
+            bg={colorMode === "light" ? "#00A9FF" : "#cdf5fd"}
+            color={colorMode === "light" ? "#cdf5fd" : "#265073"}
+          >
             <a href={projects.gitHref}>
               <i className={projects.iconGit}></i>
             </a>
           </Button>
-          <Button variant="ghost" colorScheme="blue">
+          <Button
+            variant="ghost"
+            bg={colorMode === "light" ? "#00A9FF" : "#cdf5fd"}
+            color={colorMode === "light" ? "#cdf5fd" : "#265073"}
+          >
             <a href={projects.liveHref}>
               <i className={projects.iconLive}></i>
             </a>

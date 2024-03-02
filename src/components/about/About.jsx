@@ -1,4 +1,13 @@
-import { Flex, Box, Text, Card, CardBody, Button, CardHeader } from "@chakra-ui/react";
+import {
+  Flex,
+  Box,
+  Text,
+  Card,
+  CardBody,
+  Button,
+  CardHeader,
+  useColorMode,
+} from "@chakra-ui/react";
 import { forwardRef, useContext } from "react";
 import RefContext from "../../context/RefContext";
 // import Milestones from "../timeline/Timeline";
@@ -8,6 +17,7 @@ import { skillsVariants } from "../animations/Animations";
 
 function About() {
   const { aboutRef } = useContext(RefContext);
+  const { colorMode } = useColorMode();
 
   return (
     <Flex
@@ -54,7 +64,7 @@ function About() {
           w={{ base: "100%", md: "100%" }}
           h={{ base: "fit-content", md: "100%" }}
           my={{ base: "4", md: "0" }}
-          display="none"
+          display="flex"
           alignItems={"center"}
           justifyContent={"center"}
           flexDir={"column"}
@@ -80,7 +90,9 @@ function About() {
                 whileInView="animate"
                 viewport={{ once: true }}
                 key={index}
-                className="space-mono-regular"
+                className="ubuntu-regular"
+                bg={colorMode === "light" ? "#00A9FF" : "#1D3C56"}
+                color={colorMode === "light" ? "#cdf5fd" : "#fff"}
               >
                 {skill}
               </Button>
@@ -105,6 +117,8 @@ function About() {
             viewport={{ once: false }}
             key={index}
             h="auto"
+            bg={colorMode === "light" ? "#00A9FF" : "#1D3C56"}
+            color={colorMode === "light" ? "#cdf5fd" : "#fff"}
           >
             <CardHeader>
               <Text
