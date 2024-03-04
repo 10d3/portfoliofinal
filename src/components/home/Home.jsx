@@ -81,7 +81,7 @@ function Home() {
             >
               {infoHome.title}
             </Text>
-            <Text className="ubuntu-bold" fontSize={"5xl"} fontWeight={"bold"}>
+            <Text className="ubuntu-bold" fontSize={{base:"4xl", md:'5xl'}} fontWeight={"bold"}>
               {
                 infoHome.name.split("").map((letter, i) => (
                   <motion.span
@@ -101,7 +101,7 @@ function Home() {
             className="poppins-regular"
             fontSize={"1.2rem"}
             mt={"10px"}
-            lineHeight={1.618}
+            lineHeight={{base:1.2, md:1.618}}
           >
             {infoHome.description}
           </Text>
