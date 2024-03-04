@@ -128,7 +128,7 @@ function Home() {
         <Stack
           direction={"row"}
           spacing={4}
-          mt={{ base: "0.5rem", md: "3rem" }}
+          mt={{ base: "2.47rem", md: "3rem" }}
           alignSelf={{ base: "center", md: "flex-start" }}
         >
           {socials.map((social, index) => (
