@@ -1,19 +1,9 @@
-import { Tag } from "@chakra-ui/react";
-
 // start home section
 export const infoHome = {
   title: "Hey I Am",
   name: "Marc-Herley Antoine",
-  description: (
-    <>
-      a passionate <span style={{ color: "red" }}>front-end developer</span>{" "}
-      from Haiti. My goal is to create{" "}
-      <span style={{ color: "red" }}>impactful</span> and{" "}
-      <span style={{ color: "red" }}>functional</span> digital experiences.
-      Welcome to my <span style={{ color: "red" }}>portfolio</span>, where you can explore my work and discover how I
-      can help you achieve your <span style={{ color: "red" }}>online goals</span>.
-    </>
-  ),
+  description:
+    "a passionate front-end developer from Haiti. My goal is to create impactful and functional digital experiences. Welcome to my sportfolio, where you can explore my work and discover how I can help you achieve your online goals.",
 };
 
 export const socials = [

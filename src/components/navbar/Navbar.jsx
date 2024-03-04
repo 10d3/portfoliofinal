@@ -46,6 +46,11 @@ export default function Navbar() {
     { name: "Contact", href: contactRef },
   ];
 
+  const lightText = "black";
+  const darkText = "white";
+  const bgLight = "#a9a9a9";
+  const bgDark = "#1D3C56";
+
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const { colorMode, toggleColorMode } = useColorMode();
@@ -70,9 +75,9 @@ export default function Navbar() {
       flexDir={{ base: "column", md: "row" }}
       zIndex="4"
       // bg={{ base: isOpen ? "red.500" : "white", md: "white" }}
-      bg={colorMode === "light" ? "#00A9FF" : "#1D3C56"}
+      bg={colorMode === "light" ? bgLight : bgDark}
       transition="background-color 1s"
-      color={colorMode === "light" ? "#cdf5fd" : "white"}
+      color={colorMode === "light" ? lightText : darkText}
     >
       <Box
         display="flex"
@@ -105,6 +110,7 @@ export default function Navbar() {
             aria-label="Toggle Menu"
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
             onClick={isOpen ? onClose : onOpen}
+            bg={colorMode === "light" ?  "#efefef" : "#265073"}
           />
         </Box>
       </Box>
@@ -130,7 +136,7 @@ export default function Navbar() {
             key={index}
             // target={link.href}
             px={{ base: "0", md: "10px" }}
-            color={colorMode === "light" ? "#cdf5fd" : "white"}
+            color={colorMode === "light" ? "black" : "white"}
             w="100%"
             // h="25%"
             h={"fit-content"}
@@ -162,7 +168,7 @@ export default function Navbar() {
           <Text
             className="ubuntu-bold"
             fontSize={{ base: "2xl", md: "md" }}
-            color={colorMode === "light" ? "#cdf5fd" : "white"}
+            color={colorMode === "light" ? lightText : darkText}
             // fontFamily={'"Space Mono", monospace'}
             // fontWeight={'700'}
           >
@@ -170,8 +176,8 @@ export default function Navbar() {
           </Text>
         </Link>
         <Button
-          bg={colorMode === "light" ? "#00A9FF" : "gray.700"}
-          color={colorMode === "light" ? "#cdf5fd" : "white"}
+          bg={colorMode === "light" ? bgLight : bgDark}
+          color={colorMode === "light" ? lightText : darkText}
           onClick={toggleColorMode}
           fontSize={{ base: "2xl", md: "md" }}
         >
@@ -185,7 +191,7 @@ export default function Navbar() {
         alignItems={"center"}
         justifyContent={"center"}
       >
-        <Text color={colorMode === "light" ? "#cdf5fd" : "white"}>© 2024 10d3</Text>
+        <Text className="ubuntu-bold" color={colorMode === "light" ? lightText : darkText}>©2024 10D3</Text>
       </Box>
     </Flex>
   );

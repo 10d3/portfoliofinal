@@ -26,7 +26,7 @@ function App() {
         p={"0"}
         alignItems={"center"}
         justifyContent={"center"}
-        bg={colorMode === "light" ? "#cdf5fd" : "#265073"}
+        bg={colorMode === "light" ? "#a9a9a9" : "#265073"}
       >
         <Navbar />
         <Body />

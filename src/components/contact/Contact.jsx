@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import RefContext from "../../context/RefContext";
 import { Box, Heading, Text, useColorMode } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
 function Contact() {
   const { contactRef } = useContext(RefContext);
@@ -24,34 +25,46 @@ function Contact() {
       link: "",
     },
   ];
+
   return (
     <Box
       ref={contactRef}
       id="contact"
+      minH="90vh"
       h="fit-content"
       display="flex"
       alignItems="center"
       justifyContent="center"
-      flexDir='column'
+      flexDir="column"
       mb={4}
     >
-        <Heading mb='4' className="ubuntu-regular">Contact</Heading>
+      {/* <Heading mb='4' fontSize='5xl' className="ubuntu-regular">Contact</Heading> */}
       <Box>
-        <Heading className="ubuntu-regular">Get in touch</Heading>
+        <Heading fontSize="4xl" className="ubuntu-regular">
+          GET IN TOUCH
+        </Heading>
         <br />
         <Text className="poppins-regular" fontSize="1rem">
           I’m always up for a chat!
         </Text>
         <Text className="poppins-regular" fontSize="1rem">
           I can be reached at{" "}
-          <a className="space-mono-regular-italic" href={contact[0].link}>
+          <a
+            style={{ color: "red" }}
+            className="poppins-regular-italic"
+            href={contact[0].link}
+          >
             marcherleyantoine@gmail.com
           </a>{" "}
           or give me a shout on social media.
         </Text>
         <Box display="flex" flexDir="row" gap={4}>
           {contact.map((item, index) => (
-            <Text color={colorMode === "light" ? "#00A9FF" : "#cdf5fd"} fontSize="4xl" key={index}>
+            <Text
+              color={colorMode === "light" ? "black" : "#cdf5fd"}
+              fontSize="4xl"
+              key={index}
+            >
               <a href={item.link}>
                 <i className={item.name}></i>
               </a>

@@ -95,8 +95,8 @@ function Portfolio() {
               key={index}
               fontSize="0.8rem"
               fontWeight="bold"
-              bg={colorMode === "light" ? "#00A9FF" : "#cdf5fd"}
-              color={colorMode === "light" ? "#cdf5fd" : "#265073"}
+              bg={colorMode === "light" ? "black" : "#cdf5fd"}
+              color={colorMode === "light" ? "white" : "#265073"}
               onClick={() => {
                 setPent(item);
               }}

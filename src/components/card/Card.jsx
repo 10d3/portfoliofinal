@@ -16,6 +16,12 @@ import { motion } from "framer-motion";
 
 export default function Cards({ projects, index }) {
   const { colorMode } = useColorMode();
+
+  const lightText = "black";
+  const darkText = "white";
+  const bgLight = "#a9a9a9";
+  const bgDark = "#1D3C56";
+
   return (
     <Card
       as={motion.div}
@@ -36,8 +42,8 @@ export default function Cards({ projects, index }) {
         },
       }}
       viewport={{ once: true }}
-      bg={colorMode === "light" ? "#00A9FF" : "#1D3C56"}
-      color={colorMode === "light" ? "#cdf5fd" : "#fff"}
+      bg={colorMode === "light" ? bgLight : bgDark}
+      color={colorMode === "light" ? lightText : darkText}
       maxW="sm"
     >
       <CardBody>
@@ -77,8 +83,8 @@ export default function Cards({ projects, index }) {
         >
           <Button
             variant="solid"
-            bg={colorMode === "light" ? "#00A9FF" : "#cdf5fd"}
-            color={colorMode === "light" ? "#cdf5fd" : "#265073"}
+            bg={colorMode === "light" ? darkText : "#cdf5fd"}
+            color={colorMode === "light" ? lightText : "#265073"}
           >
             <a href={projects.gitHref}>
               <i className={projects.iconGit}></i>
@@ -86,8 +92,8 @@ export default function Cards({ projects, index }) {
           </Button>
           <Button
             variant="ghost"
-            bg={colorMode === "light" ? "#00A9FF" : "#cdf5fd"}
-            color={colorMode === "light" ? "#cdf5fd" : "#265073"}
+            bg={colorMode === "light" ? darkText : "#cdf5fd"}
+            color={colorMode === "light" ? lightText : "#265073"}
           >
             <a href={projects.liveHref}>
               <i className={projects.iconLive}></i>

@@ -99,15 +99,17 @@ function Home() {
           </Box>
           <Text
             className="poppins-regular"
-            fontSize={"1.2rem"}
+            fontSize={"0.932rem"}
             mt={"10px"}
             lineHeight={{base:1.2, md:1.618}}
+            textAlign={'justify'}
           >
             {infoHome.description}
           </Text>
         </Box>
         <Button
-          bg={colorMode === "light" ? "#00A9FF" : "#cdf5fd"}
+          bg={colorMode === "light" ? "#000" : "#cdf5fd"}
+          color={colorMode === "light" ? "white" : "#265073"}
           as={motion.button}
           size="md"
           w={"fit-content"}
@@ -118,8 +120,8 @@ function Home() {
           initial="hidden"
           animate={mainControls}
           transition="0.3s linear"
+          whileTap={{ scale: 0.9 }}
           className="poppins-regular"
-          color={colorMode === "light" ? "#cdf5fd" : "#265073"}
         >
           Download CV
         </Button>
@@ -131,7 +133,7 @@ function Home() {
         >
           {socials.map((social, index) => (
             <Text
-              color={colorMode === "light" ? "#00A9FF" : "#cdf5fd"}
+              color={colorMode === "light" ? "#efefe" : "#cdf5fd"}
               _hover={{ color: "red.200" }}
               key={index}
               fontSize={"3xl"}

@@ -21,10 +21,15 @@ function CardDetail() {
     setIsLightMode(colorMode === "light");
   }, [colorMode]);
 
+  const lightText = "black";
+  const darkText = "white";
+  const bgLight = "#a9a9a9";
+  const bgDark = "#1D3C56";
+
   const params = useParams();
   return (
     <Box
-      bg={colorMode === "light" ? "#cdf5fd" : "#265073"}
+    bg={colorMode === "light" ?  "#efefef" : "#265073"}
       display={"flex"}
       alignItems={"center"}
       flexDir={"column"}
@@ -46,9 +51,9 @@ function CardDetail() {
         justifyContent="space-between"
         // mb={4}
         zIndex={10}
-        bg={colorMode === "light" ? "#00A9FF" : "#1D3C56"}
+        bg={colorMode === "light" ? bgLight : bgDark}
         transition="background-color 1s"
-        color={colorMode === "light" ? "#cdf5fd" : "white"}
+        color={colorMode === "light" ? lightText : darkText}
       >
         <Helmet>
           <title>{projects[params.id].title}</title>
@@ -67,7 +72,7 @@ function CardDetail() {
         <Link to="/blog">
           <Button className="ubuntu-bold">BACK</Button>
         </Link>
-        <Button onClick={toggleColorMode}>
+        <Button bg={colorMode === "light" ?  "#efefef" : "#265073"} onClick={toggleColorMode}>
           {isLightMode ? <MoonIcon /> : <SunIcon />}
         </Button>
       </Box>
@@ -82,7 +87,7 @@ function CardDetail() {
         alignItems="center"
         // mt="5rem"
         pos="relative"
-        bg={colorMode === "light" ? "#cdf5fd" : "#265073"}
+        // bg={colorMode === "light" ? "#cdf5fd" : "#265073"}
       >
         <Heading
           mt={{ base: "4rem", md: "4rem" }}

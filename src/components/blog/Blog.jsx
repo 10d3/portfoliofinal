@@ -28,6 +28,11 @@ function Blog() {
     setIsLightMode(colorMode === "light");
   }, [colorMode]);
 
+  const lightText = "black";
+  const darkText = "white";
+  const bgLight = "#a9a9a9";
+  const bgDark = "#1D3C56";
+
   return (
     <Flex
       w={"100vw"}
@@ -37,7 +42,7 @@ function Blog() {
       // justifyContent={"center"}
       pb={"2"}
       flexDir={"column"}
-      bg={colorMode === "light" ? "#cdf5fd" : "#265073"}
+      bg={colorMode === "light" ? "#efefef" : "#265073"}
     >
       <Helmet>
         <title>Welcome to My Blog</title>
@@ -65,7 +70,7 @@ function Blog() {
       <Box
         as="nav"
         pos={"fixed"}
-        right='0'
+        right="0"
         top="0"
         display="flex"
         w={{ md: "100%", base: "100%" }}
@@ -76,14 +81,17 @@ function Blog() {
         justifyContent="space-between"
         // mb={4}
         zIndex={10}
-        bg={colorMode === "light" ? "#00A9FF" : "#1D3C56"}
+        bg={colorMode === "light" ? bgLight : bgDark}
         transition="background-color 1s"
-        color={colorMode === "light" ? "#cdf5fd" : "white"}
+        color={colorMode === "light" ? lightText : darkText}
       >
         <Link to="/">
           <Button className="ubuntu-bold">HOME</Button>
         </Link>
-        <Button onClick={toggleColorMode}>
+        <Button
+          bg={colorMode === "light" ? "#efefef" : "#265073"}
+          onClick={toggleColorMode}
+        >
           {isLightMode ? <MoonIcon /> : <SunIcon />}
         </Button>
       </Box>
@@ -115,7 +123,7 @@ function Blog() {
           flexWrap="wrap"
           justifyContent="center"
           alignItems="center"
-          bg={colorMode === "light" ? "#cdf5fd" : "#265073"}
+          // bg={colorMode === "light" ? "#cdf5fd" : "#265073"}
           // h='70%'
           h={"auto"}
         >
@@ -127,8 +135,8 @@ function Blog() {
               variant="outline"
               w={{ base: "100%", sm: "400px" }}
               h={{ base: "fit-content", sm: "fit-content" }}
-              bg={colorMode === "light" ? "#00A9FF" : "#1D3C56"}
-              color={colorMode === "light" ? "#cdf5fd" : "white"}
+              bg={colorMode === "light" ? bgLight : bgDark}
+              color={colorMode === "light" ? lightText : darkText}
             >
               <Image
                 objectFit="cover"
@@ -149,7 +157,8 @@ function Blog() {
                   <Button
                     className="ubuntu-regular"
                     variant="solid"
-                    bg={colorMode === "light" ? "#cdf5fd" : "#265073"}
+                    bg={colorMode === "light" ? darkText : "#cdf5fd"}
+                    color={colorMode === "light" ? lightText : "#265073"}
                   >
                     <Link to={`/blog/${project.id}`}>Read More</Link>
                   </Button>

@@ -19,7 +19,7 @@ function Footer() {
           display="flex"
           justifyContent={{ base: "center", md: "flex-start" }}
         >
-          <Text className="ubuntu-bold">©2024 10D3</Text>
+          <Text color={colorMode === "light" ? "black" : "#cdf5fd"} className="ubuntu-bold">©2024 10D3</Text>
         </Box>
         <Box
           w={{ base: "100%", md: "50%" }}
@@ -30,7 +30,7 @@ function Footer() {
         >
           {socials.map((social, index) => (
             <Text
-              color={colorMode === "light" ? "#00A9FF" : "#cdf5fd"}
+              color={colorMode === "light" ? "black" : "#cdf5fd"}
               fontSize="2xl"
               key={index}
             >

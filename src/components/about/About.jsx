@@ -70,7 +70,7 @@ function About() {
           flexDir={"column"}
           ml={{ base: "0", md: "4" }}
         >
-          <Text mt={{base:'0', md:'4'}} className="ubuntu-regular" textAlign="left">
+          <Text mt={{base:'0', md:'4'}} fontSize='2xl' className="ubuntu-regular" textAlign="left">
             Use for Work and Fun
           </Text>
           <Box
@@ -93,8 +93,8 @@ function About() {
                 viewport={{ once: true }}
                 key={index}
                 className="ubuntu-regular"
-                bg={colorMode === "light" ? "#00A9FF" : "#1D3C56"}
-                color={colorMode === "light" ? "#cdf5fd" : "#fff"}
+                bg={colorMode === "light" ? "black" : "#1D3C56"}
+                color={colorMode === "light" ? "white" : "#fff"}
               >
                 {skill}
               </Button>
@@ -119,8 +119,8 @@ function About() {
             viewport={{ once: false }}
             key={index}
             h="auto"
-            bg={colorMode === "light" ? "#00A9FF" : "#1D3C56"}
-            color={colorMode === "light" ? "#cdf5fd" : "#fff"}
+            bg={colorMode === "light" ? "black" : "#1D3C56"}
+            color={colorMode === "light" ? "white" : "#fff"}
           >
             <CardHeader>
               <Text
