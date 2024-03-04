@@ -1,9 +1,19 @@
+import { Tag } from "@chakra-ui/react";
+
 // start home section
 export const infoHome = {
   title: "Hey I Am",
-  name: "Herley Antoine",
-  description:
-    "a passionate front-end developer from Haiti. My goal is to create impactful and functional digital experiences. Welcome to my portfolio, where you can explore my work and discover how I can help you achieve your online goals.",
+  name: "Marc-Herley Antoine",
+  description: (
+    <>
+      a passionate <span style={{ color: "red" }}>front-end developer</span>{" "}
+      from Haiti. My goal is to create{" "}
+      <span style={{ color: "red" }}>impactful</span> and{" "}
+      <span style={{ color: "red" }}>functional</span> digital experiences.
+      Welcome to my <span style={{ color: "red" }}>portfolio</span>, where you can explore my work and discover how I
+      can help you achieve your <span style={{ color: "red" }}>online goals</span>.
+    </>
+  ),
 };
 
 export const socials = [
@@ -110,22 +120,25 @@ export const skills = [
 export const aboutMe = (
   <>
     Hello, I&apos;m Herley, a 21-year-old with a profound passion for computer
-    science and technology. From a young age, I&apos;ve been deeply curious about all
-    things related to computing. Growing up in a country where accessing a
-    computer and electricity posed significant challenges, I was fortunate to
-    have older cousins who shared my curiosity and had access to computer
-    resources, which I leveraged for my own learning.<br/>
+    science and technology. From a young age, I&apos;ve been deeply curious
+    about all things related to computing. Growing up in a country where
+    accessing a computer and electricity posed significant challenges, I was
+    fortunate to have older cousins who shared my curiosity and had access to
+    computer resources, which I leveraged for my own learning.
+    <br />
     <br /> Navigating this profession in a country like Haiti has been a
     significant challenge. Despite the obstacles, access to the internet has
     been pivotal in my education. It has enabled me to study and acquire skills
-    in software development, website creation, and phone repair. Currently, I&apos;m
-    focused on expanding my expertise in cybersecurity.<br/>
+    in software development, website creation, and phone repair. Currently,
+    I&apos;m focused on expanding my expertise in cybersecurity.
+    <br />
     <br /> Throughout my journey, I&apos;ve had the opportunity to work as a
     freelancer with individuals from various parts of the world. In this
-    portfolio, you&apos;ll find a showcase of the diverse projects and websites I&apos;ve
-    developed.<br/>
+    portfolio, you&apos;ll find a showcase of the diverse projects and websites
+    I&apos;ve developed.
+    <br />
     <br /> I am dedicated to my professional and personal growth and am open to
-    new opportunities and challenges. Please don&apos;t hesitate to reach out to me
-    for any inquiries or potential collaborations.
+    new opportunities and challenges. Please don&apos;t hesitate to reach out to
+    me for any inquiries or potential collaborations.
   </>
 );

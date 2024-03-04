@@ -29,6 +29,19 @@ function Home() {
     }
   }, [isInView]);
 
+  const defaultAnimation = {
+    hidden:{
+      opacity:0
+    },
+    animate: (i) => ({
+      opacity:1,
+      transition:{
+        // duration:1,
+        delay: i * 0.08,
+      }
+    })
+  }
+
   return (
     <Flex
       ref={homeRef}
@@ -39,7 +52,7 @@ function Home() {
       justifyContent={"center"}
       flexDir={{ base: "column-reverse", md: "row" }}
       // marginTop={"2"}
-      marginBottom={{ base: "35", md: "2" }}
+      // marginBottom={{ base: "35", md: "2" }}
     >
       <Helmet>
         <title>Home Page</title>
@@ -69,14 +82,26 @@ function Home() {
               {infoHome.title}
             </Text>
             <Text className="ubuntu-bold" fontSize={"5xl"} fontWeight={"bold"}>
-              {infoHome.name}
+              {
+                infoHome.name.split("").map((letter, i) => (
+                  <motion.span
+                    key={i}
+                    custom={i}
+                    variants={defaultAnimation}
+                    initial="hidden"
+                    animate="animate"
+                  >
+                    {letter}
+                  </motion.span>
+                ))
+              }
             </Text>
           </Box>
           <Text
             className="poppins-regular"
             fontSize={"1.2rem"}
             mt={"10px"}
-            lineHeight={1.2}
+            lineHeight={1.618}
           >
             {infoHome.description}
           </Text>
@@ -101,7 +126,7 @@ function Home() {
         <Stack
           direction={"row"}
           spacing={4}
-          mt={{ base: "3rem", md: "3rem" }}
+          mt={{ base: "0.5rem", md: "3rem" }}
           alignSelf={{ base: "center", md: "flex-start" }}
         >
           {socials.map((social, index) => (

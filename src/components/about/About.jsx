@@ -70,7 +70,7 @@ function About() {
           flexDir={"column"}
           ml={{ base: "0", md: "4" }}
         >
-          <Text className="ubuntu-regular" textAlign="left">
+          <Text mt={{base:'0', md:'4'}} className="ubuntu-regular" textAlign="left">
             Use for Work and Fun
           </Text>
           <Box
@@ -78,8 +78,10 @@ function About() {
             flexDir="row"
             flexWrap="wrap"
             alignItems="center"
-            h={{ base: "15rem", md: "40%" }}
+            h={{ base: "15rem", md: "10rem" }}
+            w={{ base: "100%", md: "70%" }}
             justifyContent="space-between"
+            mb={{ base: "0", md: "4" }}
           >
             {skills.map((skill, index) => (
               <Button

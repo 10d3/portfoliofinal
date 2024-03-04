@@ -19,7 +19,7 @@ function Footer() {
           display="flex"
           justifyContent={{ base: "center", md: "flex-start" }}
         >
-          <Text className="ubuntu-bold">©2024-10d3</Text>
+          <Text className="ubuntu-bold">©2024 10D3</Text>
         </Box>
         <Box
           w={{ base: "100%", md: "50%" }}

@@ -107,7 +107,7 @@ function Portfolio() {
           ))}
         </HStack>
         {filt.map((project, index) => (
-          <Cards key={index} projects={project} />
+          <Cards key={index} index={index} projects={project} />
         ))}
       </Box>
     </Flex>
