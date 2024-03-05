@@ -7,7 +7,7 @@ import {
   Text,
   useColorMode,
 } from "@chakra-ui/react";
-import imageP from "../../../public/images/imageP.png";
+import imageH from "../../../public/images/imageH.png";
 import { forwardRef, useContext, useEffect } from "react";
 import RefContext from "../../context/RefContext";
 import { motion, useAnimation, useInView } from "framer-motion";
@@ -160,7 +160,7 @@ function Home() {
         justifyContent={"center"}
       >
         <Img
-          src={imageP}
+          src={imageH}
           borderRadius="30"
           alt="imageP"
           w={{ base: "60%", md: "auto" }}
