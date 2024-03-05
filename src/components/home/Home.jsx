@@ -68,7 +68,7 @@ function Home() {
         flex={"1"}
         flexDir={"column"}
         w={{ base: "100%", md: "50%" }}
-        h={{ base: "50%", md: "100%" }}
+        h={{ base: "60%", md: "100%" }}
         gap={"2rem"}
         alignItems={"flex-start"}
         justifyContent={"center"}
@@ -159,7 +159,7 @@ function Home() {
       </Box>
       <Box
         w={{ base: "100%", md: "50%" }}
-        h={{ base: "50%", md: "100%" }}
+        h={{ base: "40%", md: "100%" }}
         display={"flex"}
         alignItems={"center"}
         justifyContent={"center"}
