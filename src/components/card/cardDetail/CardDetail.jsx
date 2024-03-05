@@ -14,8 +14,15 @@ import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { Helmet } from "react-helmet";
 
 function CardDetail() {
+
+  const params = useParams();
+
   const { colorMode, toggleColorMode } = useColorMode();
   const [isLightMode, setIsLightMode] = useState(true);
+
+  const project = projects.find(project => project.id === Number(params.id));
+  const baseUrl = `${window.location.origin}/blog/`; // Construct base URL for project pages
+  const projectUrl = `${baseUrl}${project.id}`; // Generate the specific project URL
 
   useEffect(() => {
     setIsLightMode(colorMode === "light");
@@ -26,7 +33,7 @@ function CardDetail() {
   const bgLight = "#a9a9a9";
   const bgDark = "#1D3C56";
 
-  const params = useParams();
+  console.log(projectUrl)
   return (
     <Box
     bg={colorMode === "light" ?  "#efefef" : "#265073"}
@@ -66,7 +73,7 @@ function CardDetail() {
             content={projects[params.id].description}
           />
           <meta property="og:image" content={projects[params.id].img} />
-          <meta property="og:url" content="URL" />
+          <meta property="og:url" content={projectUrl} />
           <meta name="twitter:card" content="summary_large_image" />
         </Helmet>
         <Link to="/blog">
