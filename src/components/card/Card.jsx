@@ -62,7 +62,7 @@ export default function Cards({ projects, index }) {
             </Button>
           </HStack>
           <Text className="poppins-regular">{projects.description}</Text>
-          <ButtonGroup className="space-mono-regular" spacing="2">
+          <ButtonGroup className="ubuntu-regular" spacing="2">
             {projects.technologies.map((tech, index) => {
               return (
                 <Button key={index} size="sm">
