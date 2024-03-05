@@ -9,7 +9,7 @@ export default function Body() {
 
   return (
     <Flex
-      bg={colorMode === "light" ? "#efefef" : "#265073"}
+      // bg={colorMode === "light" ? "#efefef" : "#265073"}
       transformOrigin={"center"}
       // transition={"0.3s ease"}
       px={{ base: "5%", md: "15%" }}
