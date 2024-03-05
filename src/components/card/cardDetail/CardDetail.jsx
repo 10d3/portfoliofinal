@@ -33,7 +33,6 @@ function CardDetail() {
   const bgLight = "#a9a9a9";
   const bgDark = "#1D3C56";
 
-  console.log(projectUrl)
   return (
     <Box
     bg={colorMode === "light" ?  "#efefef" : "#265073"}
@@ -74,7 +73,7 @@ function CardDetail() {
           />
           <meta property="og:image" content={projects[params.id].img} />
           <meta property="og:url" content={projectUrl} />
-          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:card" content={projects[params.id].description} />
         </Helmet>
         <Link to="/blog">
           <Button className="ubuntu-bold">BACK</Button>

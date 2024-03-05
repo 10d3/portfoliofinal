@@ -20,7 +20,6 @@ function Home() {
   useEffect(() => {
     if (isInView) {
       mainControls.start("visible");
-      console.log(isInView);
     }
   }, [isInView]);
 
