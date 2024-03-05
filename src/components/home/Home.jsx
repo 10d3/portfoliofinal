@@ -2,18 +2,22 @@ import {
   Box,
   Button,
   Flex,
-  Img,
   Stack,
   Text,
   useColorMode,
 } from "@chakra-ui/react";
+import imageP from "../../../public/images/imageP.png";
+import imageHw from "../../../public/images/imageH.webp";
 import imageH from "../../../public/images/imageH.png";
+import imagePw from "../../../public/images/imageP.webp";
 import { forwardRef, useContext, useEffect } from "react";
 import RefContext from "../../context/RefContext";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { textVariants, iconVars } from "../animations/Animations";
 import { socials, infoHome } from "../data/Data";
 import { Helmet } from "react-helmet";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 function Home() {
   const { homeRef } = useContext(RefContext);
@@ -47,10 +51,13 @@ function Home() {
       ref={homeRef}
       id="home"
       w={"100%"}
-      minH={"100vh"}
+      // minH={"100vh"}
+      h={'100vh'}
       alignItems={"center"}
       justifyContent={"center"}
       flexDir={{ base: "column-reverse", md: "row" }}
+      top={{ base: "6%", md: "0" }}
+      pos={"relative"}
       // marginTop={"2"}
       // marginBottom={{ base: "35", md: "2" }}
     >
@@ -63,7 +70,7 @@ function Home() {
         flex={"1"}
         flexDir={"column"}
         w={{ base: "100%", md: "50%" }}
-        h={{ base: "60%", md: "100%" }}
+        h={{ base: "50%", md: "100%" }}
         gap={"2rem"}
         alignItems={"flex-start"}
         justifyContent={"center"}
@@ -154,18 +161,20 @@ function Home() {
       </Box>
       <Box
         w={{ base: "100%", md: "50%" }}
-        h={{ base: "40%", md: "100%" }}
+        h={{ base: "50%", md: "100%" }}
         display={"flex"}
         alignItems={"center"}
         justifyContent={"center"}
-        bg={colorMode === "light" ? "#efefef" : "#265073"}
+        overflow={"hidden"}
       >
-        <Img
+        <LazyLoadImage
+          className="lazy"
           src={imageH}
-          borderRadius="30"
-          alt="imageP"
-          w={{ base: "60%", md: "auto" }}
-          h={"fit-content"}
+          placeholderSrc={imageHw}
+          effect="blur"
+          alt="herley Portfolio react sull-stack developer"
+          w={{ base: "auto", md: "auto" }}
+          h="100%"
           justifyContent={"center"}
           alignSelf={{ base: "flex-end", md: "center" }}
         />

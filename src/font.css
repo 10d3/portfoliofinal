@@ -1,3 +1,7 @@
+span{
+  height: 100%;
+  width: auto;
+}
 .space-mono-regular {
     font-family: "Space Mono", monospace;
     font-weight: 400;

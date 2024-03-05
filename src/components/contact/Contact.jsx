@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import RefContext from "../../context/RefContext";
 import { Box, Heading, Text, useColorMode } from "@chakra-ui/react";
-import { motion } from "framer-motion";
 
 function Contact() {
   const { contactRef } = useContext(RefContext);
@@ -50,7 +49,6 @@ function Contact() {
         <Text className="poppins-regular" fontSize="1rem">
           I can be reached at{" "}
           <a
-            style={{ color: "red" }}
             className="poppins-regular-italic"
             href={contact[0].link}
           >

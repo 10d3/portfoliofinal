@@ -116,7 +116,7 @@ function About() {
             variants={skillsVariants}
             initial="hidden"
             whileInView="animate"
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             key={index}
             h="auto"
             bg={colorMode === "light" ? "black" : "#1D3C56"}
