@@ -94,6 +94,8 @@ export default function Navbar() {
           animate="animate"
           fontSize={"xl"}
           cursor={"pointer"}
+          whileTap={{ scale: 0.9 }}
+          whileHover={{ scale: 1.1 }}
         >
           <a
             onClick={() =>
@@ -110,7 +112,7 @@ export default function Navbar() {
             aria-label="Toggle Menu"
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
             onClick={isOpen ? onClose : onOpen}
-            bg={colorMode === "light" ?  "#efefef" : "#265073"}
+            bg={colorMode === "light" ? "#efefef" : "#265073"}
           />
         </Box>
       </Box>
@@ -152,6 +154,8 @@ export default function Navbar() {
             initial={isMobile ? "initial" : ""}
             animate={isMobile ? (isOpen ? "open" : "") : ""}
             className="ubuntu-bold"
+            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.1 }}
           >
             <a
               onClick={() =>
@@ -166,11 +170,14 @@ export default function Navbar() {
         ))}
         <Link className="link" to="/blog">
           <Text
+            as={motion.div}
             className="ubuntu-bold"
             fontSize={{ base: "2xl", md: "md" }}
             color={colorMode === "light" ? lightText : darkText}
             // fontFamily={'"Space Mono", monospace'}
             // fontWeight={'700'}
+            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.1 }}
           >
             BLOG
           </Text>
@@ -180,6 +187,8 @@ export default function Navbar() {
           color={colorMode === "light" ? lightText : darkText}
           onClick={toggleColorMode}
           fontSize={{ base: "2xl", md: "md" }}
+          whileTap={{ scale: 0.9 }}
+          whileHover={{ scale: 1.1 }}
         >
           {isLightMode ? <MoonIcon /> : <SunIcon />}
         </Button>
@@ -191,7 +200,12 @@ export default function Navbar() {
         alignItems={"center"}
         justifyContent={"center"}
       >
-        <Text className="ubuntu-bold" color={colorMode === "light" ? lightText : darkText}>©2024 10D3</Text>
+        <Text
+          className="ubuntu-bold"
+          color={colorMode === "light" ? lightText : darkText}
+        >
+          ©2024 10D3
+        </Text>
       </Box>
     </Flex>
   );

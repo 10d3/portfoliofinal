@@ -1,6 +1,15 @@
 span{
+  height: fill-available;
+  height: -webkit-fill-available;
   height: 100%;
   width: auto;
+  position: relative;
+  top: 6%;
+}
+@media (max-width: 768px) {
+  span{
+    top: 10%;
+  }
 }
 .space-mono-regular {
     font-family: "Space Mono", monospace;

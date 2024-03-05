@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import RefContext from "../../context/RefContext";
 import { Box, Heading, Text, useColorMode } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
 function Contact() {
   const { contactRef } = useContext(RefContext);
@@ -48,10 +49,7 @@ function Contact() {
         </Text>
         <Text className="poppins-regular" fontSize="1rem">
           I can be reached at{" "}
-          <a
-            className="poppins-regular-italic"
-            href={contact[0].link}
-          >
+          <a className="poppins-regular-italic" href={contact[0].link}>
             marcherleyantoine@gmail.com
           </a>{" "}
           or give me a shout on social media.
@@ -59,9 +57,12 @@ function Contact() {
         <Box display="flex" flexDir="row" gap={4}>
           {contact.map((item, index) => (
             <Text
+              as={motion.div}
               color={colorMode === "light" ? "black" : "#cdf5fd"}
               fontSize="4xl"
               key={index}
+              whileTap={{ scale: 0.9 }}
+              whileHover={{ scale: 1.1 }}
             >
               <a href={item.link}>
                 <i className={item.name}></i>

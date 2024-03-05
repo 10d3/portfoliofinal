@@ -97,6 +97,9 @@ function Portfolio() {
               fontWeight="bold"
               bg={colorMode === "light" ? "black" : "#cdf5fd"}
               color={colorMode === "light" ? "white" : "#265073"}
+              transition="0.3s ease"
+              _hover={{ bg: colorMode === "light" ? "#555" : "#e0f7fe" }}
+              cursor={"pointer"}
               onClick={() => {
                 setPent(item);
               }}

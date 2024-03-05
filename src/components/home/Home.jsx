@@ -1,11 +1,4 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Stack,
-  Text,
-  useColorMode,
-} from "@chakra-ui/react";
+import { Box, Button, Flex, Stack, Text, useColorMode } from "@chakra-ui/react";
 import imageHw from "../../../public/images/imageH.webp";
 import imageH from "../../../public/images/imageH.png";
 import { forwardRef, useContext, useEffect } from "react";
@@ -15,7 +8,7 @@ import { textVariants, iconVars } from "../animations/Animations";
 import { socials, infoHome } from "../data/Data";
 import { Helmet } from "react-helmet";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import 'react-lazy-load-image-component/src/effects/blur.css';
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 function Home() {
   const { homeRef } = useContext(RefContext);
@@ -32,17 +25,17 @@ function Home() {
   }, [isInView]);
 
   const defaultAnimation = {
-    hidden:{
-      opacity:0
+    hidden: {
+      opacity: 0,
     },
     animate: (i) => ({
-      opacity:1,
-      transition:{
+      opacity: 1,
+      transition: {
         // duration:1,
         delay: i * 0.08,
-      }
-    })
-  }
+      },
+    }),
+  };
 
   return (
     <Flex
@@ -50,7 +43,7 @@ function Home() {
       id="home"
       w={"100%"}
       // minH={"100vh"}
-      minH={'100vh'}
+      minH={"100vh"}
       alignItems={"center"}
       justifyContent={"center"}
       flexDir={{ base: "column-reverse", md: "row" }}
@@ -86,28 +79,30 @@ function Home() {
             >
               {infoHome.title}
             </Text>
-            <Text className="ubuntu-bold" fontSize={{base:"4xl", md:'5xl'}} fontWeight={"bold"}>
-              {
-                infoHome.name.split("").map((letter, i) => (
-                  <motion.span
-                    key={i}
-                    custom={i}
-                    variants={defaultAnimation}
-                    initial="hidden"
-                    animate="animate"
-                  >
-                    {letter}
-                  </motion.span>
-                ))
-              }
+            <Text
+              className="ubuntu-bold"
+              fontSize={{ base: "4xl", md: "5xl" }}
+              fontWeight={"bold"}
+            >
+              {infoHome.name.split("").map((letter, i) => (
+                <motion.span
+                  key={i}
+                  custom={i}
+                  variants={defaultAnimation}
+                  initial="hidden"
+                  animate="animate"
+                >
+                  {letter}
+                </motion.span>
+              ))}
             </Text>
           </Box>
           <Text
             className="poppins-regular"
             fontSize={"0.932rem"}
             mt={"10px"}
-            lineHeight={{base:1.2, md:1.618}}
-            textAlign={'justify'}
+            lineHeight={{ base: 1.2, md: 1.618 }}
+            textAlign={"justify"}
           >
             {infoHome.description}
           </Text>
@@ -124,11 +119,13 @@ function Home() {
           }}
           initial="hidden"
           animate={mainControls}
-          transition="0.3s linear"
-          whileTap={{ scale: 0.9 }}
           className="poppins-regular"
+          transition="0.3s ease"
+          whileTap={{ scale: 0.9 }}
+          _hover={{ bg: colorMode === "light" ? "#343434" : "#e2f8ff" }}
+          whileHover={{ scale: 1.1 }}
         >
-          Download CV
+          <a href="/public/certificat.pdf" download>Download CV</a>
         </Button>
         <Stack
           direction={"row"}
@@ -139,7 +136,8 @@ function Home() {
           {socials.map((social, index) => (
             <Text
               color={colorMode === "light" ? "#efefe" : "#cdf5fd"}
-              _hover={{ color: "red.200" }}
+              // transition="0.3s ease"
+              _hover={{ color: colorMode === "light" ? "#555" : "#e0f7fe" }}
               key={index}
               fontSize={"3xl"}
               cursor={"pointer"}
@@ -149,6 +147,8 @@ function Home() {
               initial="hidden"
               whileInView="animate"
               viewport={{ once: true }}
+              whileTap={{ scale: 0.9 }}
+              whileHover={{ scale: 1.1 }}
             >
               <a href={social.lien}>
                 <i className={social.name}></i>
@@ -161,7 +161,6 @@ function Home() {
         w={{ base: "100%", md: "50%" }}
         h={{ base: "40%", md: "100%" }}
         minH={{ base: "40%", md: "100%" }}
-        borderRadius={{ base: "50%", md: "0" }}
         display={"flex"}
         alignItems={"center"}
         justifyContent={"center"}
@@ -174,7 +173,7 @@ function Home() {
           effect="blur"
           alt="herley Portfolio react sull-stack developer"
           w={{ base: "auto", md: "auto" }}
-          h="100%"
+          h="fit-content"
           justifyContent={"center"}
           alignSelf={{ base: "flex-end", md: "center" }}
         />
