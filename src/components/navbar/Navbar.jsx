@@ -185,6 +185,7 @@ export default function Navbar() {
         <Button
           bg={colorMode === "light" ? bgLight : bgDark}
           color={colorMode === "light" ? lightText : darkText}
+          _hover={{color: colorMode === "light" ?  "#fff" : "#555"}}
           onClick={toggleColorMode}
           fontSize={{ base: "2xl", md: "md" }}
           whileTap={{ scale: 0.9 }}
