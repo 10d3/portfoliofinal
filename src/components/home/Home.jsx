@@ -6,10 +6,8 @@ import {
   Text,
   useColorMode,
 } from "@chakra-ui/react";
-import imageP from "../../../public/images/imageP.png";
 import imageHw from "../../../public/images/imageH.webp";
 import imageH from "../../../public/images/imageH.png";
-import imagePw from "../../../public/images/imageP.webp";
 import { forwardRef, useContext, useEffect } from "react";
 import RefContext from "../../context/RefContext";
 import { motion, useAnimation, useInView } from "framer-motion";
