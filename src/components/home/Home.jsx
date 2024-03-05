@@ -50,7 +50,7 @@ function Home() {
       id="home"
       w={"100%"}
       // minH={"100vh"}
-      h={'100vh'}
+      minH={'100vh'}
       alignItems={"center"}
       justifyContent={"center"}
       flexDir={{ base: "column-reverse", md: "row" }}
@@ -160,6 +160,8 @@ function Home() {
       <Box
         w={{ base: "100%", md: "50%" }}
         h={{ base: "40%", md: "100%" }}
+        minH={{ base: "40%", md: "100%" }}
+        borderRadius={{ base: "50%", md: "0" }}
         display={"flex"}
         alignItems={"center"}
         justifyContent={"center"}
