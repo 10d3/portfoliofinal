@@ -158,6 +158,7 @@ function Home() {
         display={"flex"}
         alignItems={"center"}
         justifyContent={"center"}
+        bg={colorMode === "light" ? "#efefef" : "#265073"}
       >
         <Img
           src={imageH}
