@@ -11,6 +11,18 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 function Home() {
+
+  const baseUrl = `${window.location.origin}/certificat.pdf`
+  const downloadPdf= (url) => {
+    const fileName = url.split('/').pop()
+    const aTag = document.createElement('a')
+    aTag.href = url
+    aTag.setAttribute("Downloaad", fileName)
+    document.body.appendChild(aTag)
+    aTag.click();
+    aTag.remove();
+  }
+
   const { homeRef } = useContext(RefContext);
   const { colorMode } = useColorMode();
 
@@ -123,8 +135,9 @@ function Home() {
           whileTap={{ scale: 0.9 }}
           _hover={{ bg: colorMode === "light" ? "#343434" : "#e2f8ff" }}
           whileHover={{ scale: 1.1 }}
+          onClick={() => {downloadPdf(baseUrl)}}
         >
-          <a href="/public/certificat.pdf" download>Download CV</a>
+          Download CV
         </Button>
         <Stack
           direction={"row"}
@@ -164,6 +177,7 @@ function Home() {
         alignItems={"center"}
         justifyContent={"center"}
         overflow={"hidden"}
+        // bg="linear-gradient(180deg, rgba(2,0,36,0) 0%, rgba(239,239,002,1) 80%)"
       >
         <LazyLoadImage
           className="lazy"
