@@ -4,6 +4,7 @@ import RefContext from "../../context/RefContext";
 import Cards from "../card/Card";
 import { motion, useInView, useAnimation } from "framer-motion";
 import { projects, seaBut } from "../data/Data";
+import { filtButtonVars } from "../animations/Animations";
 
 function Portfolio() {
   const { portfolioRef } = useContext(RefContext);
@@ -25,18 +26,18 @@ function Portfolio() {
     }
   }, [isInView]);
 
-  const filtButtonVars = {
-    hidden: {
-      opacity: 0,
-      scaleY: 0,
-      // transition: { delay: custom * 0.1 },
-    },
-    animate: (index) => ({
-      opacity: 1,
-      scaleY: 1,
-      transition: { delay: index * 0.2 },
-    }),
-  };
+  // const filtButtonVars = {
+  //   hidden: {
+  //     opacity: 0,
+  //     scaleY: 0,
+  //     // transition: { delay: custom * 0.1 },
+  //   },
+  //   animate: (index) => ({
+  //     opacity: 1,
+  //     scaleY: 1,
+  //     transition: { delay: index * 0.2 },
+  //   }),
+  // };
 
   return (
     <Flex
@@ -58,8 +59,8 @@ function Portfolio() {
         }}
         initial="hidden"
         animate={mainControls}
-        transition="0.8s linear"
-        pt={14}
+        // transition="0.8s linear"
+        pt={{base: 20, md:4}}
       >
         <Text className="ubuntu-regular" fontSize="4xl" alignSelf="left">
           Portfolio
@@ -80,7 +81,7 @@ function Portfolio() {
         }}
         initial="hidden"
         animate={mainControls}
-        transition="0.8s linear"
+        // transition="0.8s linear"
       >
         <HStack width={{ base: "100%", md: "93%" }} overflow="hidden">
           {seaBut.map((item, index) => (
@@ -97,7 +98,6 @@ function Portfolio() {
               fontWeight="bold"
               bg={colorMode === "light" ? "black" : "#cdf5fd"}
               color={colorMode === "light" ? "white" : "#265073"}
-              transition="0.3s ease"
               _hover={{ bg: colorMode === "light" ? "#555" : "#e0f7fe" }}
               cursor={"pointer"}
               onClick={() => {

@@ -36,7 +36,7 @@ export default function Cards({ projects, index }) {
         x: 0, // Slide in to its original position
         scale: 1, // Animate to full size
         transition: {
-          duration: 1, // Animation duration
+          duration: 0.5, // Animation duration
           // type: "spring",
           // stiffness: 120,
         },

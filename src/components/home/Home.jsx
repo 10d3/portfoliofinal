@@ -1,4 +1,12 @@
-import { Box, Button, Flex, Stack, Text, useColorMode } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  Flex,
+  Stack,
+  Text,
+  useColorMode,
+} from "@chakra-ui/react";
 import imageHw from "../../../public/images/imageH.webp";
 import imageH from "../../../public/images/imageH.png";
 import { forwardRef, useContext, useEffect } from "react";
@@ -12,19 +20,22 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 
 function Home() {
 
-  const baseUrl = `${window.location.origin}/certificat.pdf`
-  const downloadPdf= (url) => {
-    const fileName = url.split('/').pop()
-    const aTag = document.createElement('a')
-    aTag.href = url
-    aTag.setAttribute("Downloaad", fileName)
-    document.body.appendChild(aTag)
+  const baseUr = `${window.location.origin}`;
+  const baseUrl = `${baseUr}/certificat.pdf`
+  const downloadPdf = (url) => {
+    const fileName = url.split("/").pop();
+    const aTag = document.createElement("a");
+    aTag.href = url;
+    aTag.setAttribute("Downloaad", fileName);
+    document.body.appendChild(aTag);
     aTag.click();
     aTag.remove();
-  }
+  };
 
-  const { homeRef } = useContext(RefContext);
+  const { homeRef, portfolioRef } = useContext(RefContext);
   const { colorMode } = useColorMode();
+
+  const links = [{ name: "Portfolio", href: portfolioRef }];
 
   const isInView = useInView(homeRef, { once: true });
   const mainControls = useAnimation();
@@ -66,6 +77,16 @@ function Home() {
       <Helmet>
         <title>Home Page</title>
         <meta name="description" content="Helmet application" />
+        <meta name="keywords" content={infoHome.keyWords} />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Herley's Portfolio" />
+        <meta
+          property="og:description"
+          content={infoHome.descrip}
+        />
+        <meta property="og:image" content='' />
+        <meta property="og:url" content={baseUr} />
+        <meta name="twitter:card" content={infoHome.descrip} />
       </Helmet>
       <Box
         display={"flex"}
@@ -118,27 +139,46 @@ function Home() {
             {infoHome.description}
           </Text>
         </Box>
-        <Button
-          bg={colorMode === "light" ? "#000" : "#cdf5fd"}
-          color={colorMode === "light" ? "white" : "#265073"}
-          as={motion.button}
-          size="md"
-          w={"fit-content"}
-          variants={{
-            hidden: { opacity: 0, x: -200 },
-            visible: { opacity: 1, x: 0 },
-          }}
-          initial="hidden"
-          animate={mainControls}
-          className="poppins-regular"
-          transition="0.3s ease"
-          whileTap={{ scale: 0.9 }}
-          _hover={{ bg: colorMode === "light" ? "#343434" : "#e2f8ff" }}
-          whileHover={{ scale: 1.1 }}
-          onClick={() => {downloadPdf(baseUrl)}}
-        >
-          Download CV
-        </Button>
+        <ButtonGroup gap={2}>
+          <Button
+            bg={colorMode === "light" ? "#000" : "#cdf5fd"}
+            color={colorMode === "light" ? "white" : "#265073"}
+            as={motion.button}
+            size="md"
+            w={"fit-content"}
+            variants={{
+              hidden: { opacity: 0, x: -200 },
+              visible: { opacity: 1, x: 0 },
+            }}
+            initial="hidden"
+            animate={mainControls}
+            className="poppins-regular"
+            transition="0.3s ease"
+            whileTap={{ scale: 0.9 }}
+            _hover={{ bg: colorMode === "light" ? "#343434" : "#e2f8ff" }}
+            whileHover={{ scale: 1.1 }}
+            onClick={() => {
+              downloadPdf(baseUrl);
+            }}
+          >
+            Download CV
+          </Button>
+          <Button
+            as={motion.button}
+            onClick={() =>
+              links[0].href.current.scrollIntoView({ behavior: "smooth" })
+            }
+            target={links[0].href}
+            className="poppins-regular"
+            bg={colorMode === "light" ? "#000" : "#cdf5fd"}
+            color={colorMode === "light" ? "white" : "#265073"}
+            whileTap={{ scale: 0.9 }}
+            _hover={{ bg: colorMode === "light" ? "#343434" : "#e2f8ff" }}
+            whileHover={{ scale: 1.1 }}
+          >
+            View Works
+          </Button>
+        </ButtonGroup>
         <Stack
           direction={"row"}
           spacing={4}

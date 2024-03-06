@@ -3,7 +3,6 @@ import {
   Box,
   Text,
   Card,
-  CardBody,
   Button,
   CardHeader,
   useColorMode,
@@ -21,8 +20,8 @@ function About() {
 
   return (
     <Flex
-      // ref={aboutRef}
-      // id="about"
+      ref={aboutRef}
+      id="about"
       w={"100%"}
       pos={"relative"}
       h={"fit-content"}
@@ -36,9 +35,9 @@ function About() {
         display="flex"
         textAlign="left"
         alignSelf="left"
-        mt={10}
-        ref={aboutRef}
-        id="about"
+        mt={{base:14, md: 8}}
+        // ref={aboutRef}
+        // id="about"
       >
         About Me
       </Text>
