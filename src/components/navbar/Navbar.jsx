@@ -15,24 +15,8 @@ import { motion } from "framer-motion";
 import { boxMenuVars, menuVars, linkVars } from "../animations/Animations";
 import { Link } from "react-router-dom";
 import "../../font.css";
+import useMobileView from '../../hook/isMobile'
 
-function useMobileView() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      window.removeEventListener("orientationchange", handleResize);
-    };
-  }, []);
-
-  return isMobile;
-}
 
 export default function Navbar() {
   const { homeRef, aboutRef, portfolioRef, contactRef } =

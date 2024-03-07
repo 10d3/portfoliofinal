@@ -17,11 +17,11 @@ import { socials, infoHome } from "../data/Data";
 import { Helmet } from "react-helmet";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import useMobileView from "../../hook/isMobile";
 
 function Home() {
-
   const baseUr = `${window.location.origin}`;
-  const baseUrl = `${baseUr}/certificat.pdf`
+  const baseUrl = `${baseUr}/certificat.pdf`;
   const downloadPdf = (url) => {
     const fileName = url.split("/").pop();
     const aTag = document.createElement("a");
@@ -31,6 +31,8 @@ function Home() {
     aTag.click();
     aTag.remove();
   };
+
+  const isMobile = useMobileView();
 
   const { homeRef, portfolioRef } = useContext(RefContext);
   const { colorMode } = useColorMode();
@@ -80,11 +82,8 @@ function Home() {
         <meta name="keywords" content={infoHome.keyWords} />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="Herley's Portfolio" />
-        <meta
-          property="og:description"
-          content={infoHome.descrip}
-        />
-        <meta property="og:image" content='' />
+        <meta property="og:description" content={infoHome.descrip} />
+        <meta property="og:image" content="" />
         <meta property="og:url" content={baseUr} />
         <meta name="twitter:card" content={infoHome.descrip} />
       </Helmet>
@@ -217,8 +216,23 @@ function Home() {
         alignItems={"center"}
         justifyContent={"center"}
         overflow={"hidden"}
+        pos="relative"
         // bg="linear-gradient(180deg, rgba(2,0,36,0) 0%, rgba(239,239,002,1) 80%)"
       >
+        <Box
+          className="box-grad"
+          pos="absolute"
+          // bg="blue.400"
+          // w="-webkit-fill-available"
+          h={{ base: "8%", md: "26%" }}
+          bottom="0"
+          bg={
+            colorMode === "light"
+              ? `linear-gradient(180deg, rgba(2,0,36,0) 0%, rgba(239,239,239,1) ${isMobile ? "80%" :" 30%"})`
+              : `linear-gradient(180deg, rgba(2,0,36,0) 0%, #265073  ${isMobile ? "80%" :" 30%"})`
+          }
+          zIndex="1"
+        ></Box>
         <LazyLoadImage
           className="lazy"
           src={imageH}
